@@ -18,6 +18,6 @@
  👈🏻 Interactives
  📝 Productivity
  🤖 Micro Controllers
- 🌐 Geo Location
+ 🔐 Security
  📱 Mobile Apps
  🧙🏻 Costumes
