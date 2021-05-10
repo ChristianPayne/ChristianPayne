@@ -11,7 +11,7 @@
 ## 🤪 BAVEL (B *AWE* VEL)
 #### [BAVEL](https://github.com/BAVEL-Technology) is a diverse group of full stack web devs passionate about bringing apps to life!
  BabelBox >> *[Code](https://github.com/BAVEL-Technology/BabelBox)* | *[In Action](https://babelbox-react.herokuapp.com)* <br/>
- BabelBox V1 (Legacy) >> *[Code]()* | *[In Action]()*
+ BabelBox V1 (Legacy) >> *[Code](https://github.com/BAVEL-Technology/BabelBox-V1.0)* | *[In Action](https://babelbox.herokuapp.com/)*
 ## 🔮 Future Projects
 #### Let the ideas flow! I plan on having projects in the following subjects.
  💻 Open Source
