@@ -2,14 +2,9 @@
   "name": "christianpayne",
   "version": "1.0.0",
   "scripts": {
-<<<<<<< HEAD
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build" : "echo \"Build command!\" && exit 0"
-=======
     "start": "vite",
     "build": "vite build",
     "serve": "vite preview"
->>>>>>> 9b90562faeb88063d950b94015c7166535855ce5
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.7",
