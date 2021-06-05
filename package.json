@@ -1,21 +1,21 @@
 {
-  "name": "ChristianPayne",
+  "name": "christianpayne",
   "version": "1.0.0",
-  "description": "📚 Self taught [Unity3D](https://unity.com) Developer turned __Full Stack Web Developer__ certified through [UC Irvine DCE](https://ce.uci.edu/). <br/>  Currently working with a lovely group of developers at [Model Match](https://modelmatch.com/).<br/>  Find me over at [christianpayne.dev](https://www.christianpayne.dev/) ## 🔨 Open Projects!  Ennesults >> *[Code](https://github.com/ChristianPayne/Ennesults)* | *[In Action](https://twitch.tv/ennegineer)*<br/>  GriffinBot >> *[Code](https://github.com/ChristianPayne/GriffinBot)* | *[In Action](https://twitch.tv/chrisgriffin522)*<br/> ## 🏡 Past Work!  [Genesis](https://www.genesis.com/us/en/genesis.html) Auto Show [Wheelstands](http://www.arts4allmedia.com/#gen-intro) <br/>  [Hyundai](https://www.hyundaiusa.com/us/en) Auto Show [Wheelstands](http://www.arts4allmedia.com/#hy-intro) ## 🤪 BAVEL (B *AWE* VEL) #### [BAVEL](https://github.com/BAVEL-Technology) is a diverse group of full stack web devs passionate about bringing apps to life!  BabelBox >> *[Code](https://github.com/BAVEL-Technology/BabelBox)* | *[In Action](https://babelbox-react.herokuapp.com)* <br/>  BabelBox V1 (Legacy) >> *[Code](https://github.com/BAVEL-Technology/BabelBox-V1.0)* | *[In Action](https://babelbox.herokuapp.com/)* ## 🔮 Future Projects #### Let the ideas flow! I plan on having projects in the following subjects.  💻 Open Source  👈🏻 Interactives  📝 Productivity  🤖 Micro Controllers  🔐 Security  📱 Mobile Apps  🧙🏻 Costumes",
-  "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "test": "echo \"Error: no test specified\" && exit 1",
     "build" : "echo \"Build command!\" && exit 0"
+=======
+    "start": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+>>>>>>> 9b90562faeb88063d950b94015c7166535855ce5
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ChristianPayne/ChristianPayne.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ChristianPayne/ChristianPayne/issues"
-  },
-  "homepage": "https://github.com/ChristianPayne/ChristianPayne#readme"
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.7",
+    "svelte": "^3.37.0",
+    "svelte-preprocess": "^4.7.2",
+    "typescript": "^4.2.4",
+    "vite": "^2.3.5"
+  }
 }
