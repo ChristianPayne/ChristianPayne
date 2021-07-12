@@ -3,6 +3,7 @@
     { name: 'React', category: "Frameworks", icon: "devicon-react-original"},
     { name: 'Angular', category: "Frameworks", icon: "devicon-angularjs-plain"},
     { name: 'Vue', category: "Frameworks", icon: "devicon-vuejs-plain"},
+    { name: 'Svelte', category: "Frameworks", icon: ""},
     { name: 'Nextjs', category: "Frameworks", icon: "devicon-nextjs-original"},
     { name: 'Electron', category: "Frameworks", icon: "devicon-electron-original"},
     { name: 'Material UI', category: "Frameworks", icon: "devicon-materialui-plain"},
@@ -68,7 +69,15 @@
       <h2>{section}</h2>
       <div class="icons">
         {#each getTechnologies(section) as technology}
-          <i class={`${technology.icon} colored`}><span class="label font">{`${technology.name}`}</span></i>
+          {#if technology.icon}
+            <i class={`${technology.icon} colored icon`}><span class="label font">{`${technology.name}`}</span></i>
+          {/if}
+          {#if !technology.icon}
+            <span class="icon">
+              <img src="CPFav-02.png" alt="logo-icon" class="logo-icon">
+              <span class="label font">{`${technology.name}`}</span>
+            </span>
+          {/if}
         {/each}
       </div>
     </div>
@@ -104,7 +113,7 @@
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr))
   }
 
-  .capabilities .technologies .icons i {
+  .capabilities .technologies .icons .icon {
     font-size: 1.1em;
     font-weight: bold;
     padding: 0.4em;
@@ -114,14 +123,22 @@
     cursor: default;
   }
 
-  .capabilities .technologies .icons i span{
+  .capabilities .technologies .icons .logo-icon {
+    max-width: 2.5em;
+  }
+
+  .capabilities .technologies .icons .icon span{
     margin-top: 1em;
     margin-left: 1em;
     word-wrap: break-word;
   }
 
-  .capabilities .technologies i:not(:hover) {
+  .capabilities .technologies .icon:not(:hover) {
     color: #202124;
+  }
+
+  .label {
+    color: #202124
   }
 
   @media screen and (max-width: 1025px) {
