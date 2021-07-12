@@ -19,27 +19,37 @@
   <div class="page">
     <!-- About Section -->
     <h1 class="styled-font section">
-      Who?
+      // Who am I?
       <span>
-        Yeah, that is me.
+        👀 Yeah, who are you?
       </span>
     </h1>
     <div class="about">
       <img src="AboutMePic.jpg" alt="AboutMePic">
+      <div class="styled-font">
+        <h2>Who is he again?</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, quis qui? Ea totam consequatur omnis deleniti distinctio inventore consequuntur! Quam aliquam in veritatis quia nesciunt earum reiciendis. Dignissimos, sunt quos.</p>
+        <h2>Who is he again?</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, quis qui? Ea totam consequatur omnis deleniti distinctio inventore consequuntur! Quam aliquam in veritatis quia nesciunt earum reiciendis. Dignissimos, sunt quos.</p>
+        <h2>Who is he again?</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, quis qui? Ea totam consequatur omnis deleniti distinctio inventore consequuntur! Quam aliquam in veritatis quia nesciunt earum reiciendis. Dignissimos, sunt quos.</p>
+        <h2>Who is he again?</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, quis qui? Ea totam consequatur omnis deleniti distinctio inventore consequuntur! Quam aliquam in veritatis quia nesciunt earum reiciendis. Dignissimos, sunt quos.</p>
+      </div>
     </div>
 
     <!-- Capabilities Section -->
     <h1 class="styled-font section">
-      Capabilities
+      // Full Stack Capabilities
       <span>
-        I am a developer, and I love to learn new things. 
+        I am a web developer that loves to try all things!
       </span>
     </h1>
     <Capabilities/>
 
     <!-- Projects Section -->
     <h1 class="styled-font section">
-      Recent Projects 
+      // Recent Projects 
       <span>
         My most recent commits to GitHub.
       </span>
@@ -82,14 +92,13 @@
   }
 
   .about {
-    /* max-height: 50vh; */
-    display: flex;
-    
-    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.5em;
   }
   .about img {
-    width: 50%;
     border-radius: 0.5em;
+    width: 100%;
   }
 
   .cards {
@@ -104,6 +113,10 @@
     .section {
       padding-left: 0.5em;
       font-size: 1.5em;
+    }
+
+    .about {
+      grid-template-columns: 1fr;
     }
 
     .projects {
