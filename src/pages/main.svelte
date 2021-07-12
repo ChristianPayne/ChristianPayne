@@ -27,14 +27,23 @@
     <div class="about">
       <img src="AboutMePic.jpg" alt="AboutMePic">
       <div class="styled-font">
-        <h2>Who is he again?</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, quis qui? Ea totam consequatur omnis deleniti distinctio inventore consequuntur! Quam aliquam in veritatis quia nesciunt earum reiciendis. Dignissimos, sunt quos.</p>
-        <h2>Who is he again?</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, quis qui? Ea totam consequatur omnis deleniti distinctio inventore consequuntur! Quam aliquam in veritatis quia nesciunt earum reiciendis. Dignissimos, sunt quos.</p>
-        <h2>Who is he again?</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, quis qui? Ea totam consequatur omnis deleniti distinctio inventore consequuntur! Quam aliquam in veritatis quia nesciunt earum reiciendis. Dignissimos, sunt quos.</p>
-        <h2>Who is he again?</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, quis qui? Ea totam consequatur omnis deleniti distinctio inventore consequuntur! Quam aliquam in veritatis quia nesciunt earum reiciendis. Dignissimos, sunt quos.</p>
+        <i>"The trajectory of your life bends in the direction of your habits." - James Clear</i>
+        <h2>Full Stack Web Developer</h2>
+        <p>
+          Based in California, currently working as a Software Engineer at <a href="https://modelmatch.com/">Model Match</a>, I started out in Full Stack when the pandemic hit. Shortly after, I enrolled online in UC Irvine's Web Dev bootcamp. Six fast-paced months later, I was well equiped to start a new job and have not looked back since.
+        </p>
+        <h2>Interactive Developer</h2>
+        <p>
+          I have a passion for creating interactive experiences. There is a game-like nature of interactive experiences that are very enticing to me. I started using Unity3D for interactives for autoshows back in 2016. That was my first time ever coding professionally. 
+        </p>
+        <h2>Tinkerer</h2>
+        <p>
+          Another interest of mine is microcontrollers! I have been dabbling in hardware electronics from a young age. Soldering circuits and getting them to work, brings my imagination and code into a tangable space. The most interesting part of microcontrollers, in my opinion, is getting them to communicate with each other wirelessly and over the internet. Combining this hobby with my main knowledge base of software development, I have been able to improve on my simple projects.
+        </p>
+        <h2>Streamer</h2>
+        <p>
+          I have been streaming since 2015 off an on. While I started streaming games back in the day, I found out that coding on streams was more in demand than I expected. Typically, I stream coding to an audience who is not as tech-savvy as I am, generally. Because of that, I need to break down what I am doing into simple english terms. This process helps me reinforce myself and my work.
+        </p>
       </div>
     </div>
 
@@ -42,7 +51,7 @@
     <h1 class="styled-font section">
       // Full Stack Capabilities
       <span>
-        I am a web developer that loves to try all things!
+        I am a web developer that loves to try all the things!
       </span>
     </h1>
     <Capabilities/>
@@ -51,14 +60,14 @@
     <h1 class="styled-font section">
       // Recent Projects 
       <span>
-        My most recent commits to GitHub.
+        My most recent commits to <a href="https://github.com/ChristianPayne">GitHub</a>.
       </span>
     </h1>
     <div class="projects">
       {#await projects then projects}
       <div class="cards">
         {#each projects as project}
-        <Card props={project}/>
+          <Card props={project}/>
         {/each}
       </div>
       {/await}
@@ -125,6 +134,7 @@
     }
 
     .cards {
+      grid-template-columns: 1fr;
       font-size: 0.75em;
       grid-gap: 1em;
     }
