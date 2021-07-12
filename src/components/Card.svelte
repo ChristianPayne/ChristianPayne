@@ -14,7 +14,8 @@
   <p class="styled-font">Last Updated: { date.toDateString()}</p>
 </a>
 
-<style>
+<style lang="scss">
+  @import "../breakpoints.scss";
   .card {
     text-decoration: none;
     display: flex;
@@ -26,32 +27,26 @@
     border: 1px solid #41444A;
     border-radius: 0.5em;
     transition: background-color 0.3s, font-size 0.3s, border 0.3s;
-  }
 
-  .card:hover {
-    background-color: #41444A;
-    
-  }
+    &:hover {
+      background-color: #41444A;
+    }
 
-  .card h3 {
-    margin:0;
-  }
+    h3 {
+      margin:0;
+    }
 
-  .card p {
+    p {
       color: #9D9EA0;
     }
 
-  @media screen and (min-width: 1025px) {
-  }
-  @media screen and (min-width: 2000px) {
-  }
-  @media screen and (max-width: 600px) {
-    .card {
+    @include screen-sm-only {
       padding-left: 1em;
       padding-right: 1em;
-    }
-    .card h1 {
-      font-size: 1.5em;
+
+      h1 {
+        font-size: 1.5em;
+      }
     }
   }
 </style>

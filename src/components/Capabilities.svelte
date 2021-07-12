@@ -11,15 +11,16 @@
     { name: 'Bootstrap', category: "Frameworks", icon: "devicon-bootstrap-plain"},
     { name: 'JQuery', category: "Frameworks", icon: "devicon-jquery-plain"},
     { name: 'Handlebars', category: "Frameworks", icon: "devicon-handlebars-plain"},
-    { name: 'Typescript', category: "Languages", icon: "devicon-typescript-plain"},
-    { name: 'Javascript', category: "Languages", icon: "devicon-javascript-plain"},
-    { name: 'C Sharp', category: "Languages", icon: "devicon-csharp-plain"},
+    { name: 'TypeScript', category: "Languages", icon: "devicon-typescript-plain"},
+    { name: 'JavaScript', category: "Languages", icon: "devicon-javascript-plain"},
+    { name: 'C#', category: "Languages", icon: "devicon-csharp-plain"},
     { name: 'Python', category: "Languages", icon: "devicon-python-plain"},
-    { name: 'Html5', category: "Languages", icon: "devicon-html5-plain"},
-    { name: 'CSS 3', category: "Languages", icon: "devicon-css3-plain"},
+    { name: 'HTML5', category: "Languages", icon: "devicon-html5-plain"},
+    { name: 'CSS', category: "Languages", icon: "devicon-css3-plain"},
     { name: 'Sass', category: "Languages", icon: "devicon-sass-original"},
-    { name: 'Graphql', category: "Languages", icon: "devicon-graphql-plain"},
+    { name: 'GraphQL', category: "Languages", icon: "devicon-graphql-plain"},
     { name: 'AWS', category: "Dev Ops", icon: "devicon-amazonwebservices-original"},
+    { name: 'Netlify', category: "Dev Ops", icon: ""},
     { name: 'Heroku', category: "Dev Ops", icon: "devicon-heroku-original"},
     { name: 'Docker', category: "Dev Ops", icon: "devicon-docker-plain"},
     { name: 'Travis', category: "Dev Ops", icon: "devicon-travis-plain"},
@@ -37,7 +38,7 @@
     { name: 'Git', category: "Version Control", icon: "devicon-git-plain"},
     { name: 'GitHub', category: "Version Control", icon: "devicon-github-original"},
     { name: 'Bitbucket', category: "Version Control", icon: "devicon-bitbucket-original"},
-    { name: 'Windows 8', category: "Hardware", icon: "devicon-windows8-original"},
+    { name: 'Windows', category: "Hardware", icon: "devicon-windows8-original"},
     { name: 'Raspberry Pi', category: "Hardware", icon: "devicon-raspberrypi-line"},
     { name: 'Arduino', category: "Hardware", icon: ""},
     { name: 'LEDs', category: "Hardware", icon: ""},
@@ -73,7 +74,7 @@
       <div class="icons">
         {#each getTechnologies(section) as technology}
           {#if technology.icon}
-            <i class={`${technology.icon} colored icon`}><span class="label font">{`${technology.name}`}</span></i>
+            <i class={`${technology.icon} colored icon`}><span class="font">{`${technology.name}`}</span></i>
           {/if}
           {#if !technology.icon}
             <span class="icon">
@@ -87,36 +88,53 @@
   {/each}
 </div>
 
-<style>
+<style lang="scss">
+  @import "../breakpoints.scss";
   .capabilities {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 1.5em;
-  }
 
-  .capabilities .technologies {
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; */
-    border: 1px solid #41444A;
-    border-radius: 0.5em;
-    padding: 1em;
-  }
-  
-  .capabilities .technologies h2 {
-    margin: 0;
-    margin-bottom: 0.5em;
-    border-bottom: 1px solid #41444A;
-  }
+    @include screen-sm-only {
+      grid-template-columns: 1fr;
+      grid-gap: 1em;
+    }
 
-  .capabilities .technologies .icons {
+    @include screen-md-up {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include screen-lg-up {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .technologies {
+      border: 1px solid #41444A;
+      border-radius: 0.5em;
+      padding: 1em;
+
+      @include screen-sm-only {
+        font-size: 0.8em;
+      }
+
+      h2 {
+        margin: 0;
+        margin-bottom: 0.5em;
+        border-bottom: 1px solid #41444A;
+      }
+
+      .label {
+        color: #202124
+      }
+      
+    }
+  }
+  .icons {
     display: grid;
     grid-gap: .5em;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr))
   }
 
-  .capabilities .technologies .icons .icon {
+  .icon {
     font-size: 1.1em;
     font-weight: bold;
     padding: 0.4em;
@@ -126,37 +144,17 @@
     cursor: default;
   }
 
-  .capabilities .technologies .icons .logo-icon {
+  .logo-icon {
     max-width: 2.5em;
   }
 
-  .capabilities .technologies .icons .icon span{
+  .icon span {
     margin-top: 1em;
     margin-left: 1em;
     word-wrap: break-word;
   }
 
-  .capabilities .technologies .icon:not(:hover) {
+  .icon:not(:hover) {
     color: #202124;
-  }
-
-  .label {
-    color: #202124
-  }
-
-  @media screen and (max-width: 1025px) {
-    .capabilities {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-  @media screen and (max-width: 600px) {
-    .capabilities {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-gap: 1.5em;
-    }
-    .capabilities .technologies {
-      font-size: 0.8em;
-    }
   }
 </style>
