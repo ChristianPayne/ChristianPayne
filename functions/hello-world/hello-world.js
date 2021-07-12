@@ -3,9 +3,11 @@ const handler = async (event) => {
   try {
     console.log("Hello World Triggered.");
     const subject = event.queryStringParameters.name || 'World'
+    const returnValue = JSON.stringify({data: `Hello ${subject}`})
+    console.log('Returning ',returnValue);
     return {
       statusCode: 200,
-      body:`Hello ${subject}`,
+      body:returnValue,
       // // more keys you can return:
       // headers: { "headerName": "headerValue", ... },
       // isBase64Encoded: true,

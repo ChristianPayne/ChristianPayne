@@ -6,9 +6,3 @@ force = true
 from = '/api/*'
 status = 200
 to = '/.netlify/functions/:splat'
-
-[[redirects]]
-force = true
-from = 'https://github.christianpayne.dev'
-to = 'https://github.com/christianpayne'
-status = 301
