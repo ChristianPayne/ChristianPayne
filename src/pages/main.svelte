@@ -18,7 +18,7 @@
   <Banner/>
   <div class="page">
     <!-- About Section -->
-    <h1 class="font section">
+    <h1 class="styled-font section">
       Who?
       <span>
         Yeah, that is me.
@@ -29,7 +29,7 @@
     </div>
 
     <!-- Capabilities Section -->
-    <h1 class="font section">
+    <h1 class="styled-font section">
       Capabilities
       <span>
         I am a developer, and I love to learn new things. 
@@ -38,7 +38,7 @@
     <Capabilities/>
 
     <!-- Projects Section -->
-    <h1 class="font section">
+    <h1 class="styled-font section">
       Recent Projects 
       <span>
         My most recent commits to GitHub.
@@ -54,7 +54,7 @@
       {/await}
     </div>
   </div>
-  <!-- <h1 class="font section">Contact</h1> -->
+  <!-- <h1 class="styled-font section">Contact</h1> -->
 </div>
 
 <style>

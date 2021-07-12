@@ -11,8 +11,12 @@ html, body {
   width: 100%;
   background-color: #202124;
 }
-.font {
+.styled-font {
   font-family: 'Lato', sans-serif;
   /* font-family: 'Source Sans Pro', sans-serif; */
   color: #E8EAED;
+}
+
+.font {
+  font-family: 'Lato', sans-serif;
 }

@@ -1,51 +1,54 @@
 <script>
   let technologies = [
-    { name: "react", category: "Frameworks", icon: "devicon-react-original"},
-    { name: "angularjs", category: "Frameworks", icon: "devicon-angularjs-plain"},
-    { name: "vuejs", category: "Frameworks", icon: "devicon-vuejs-plain"},
-    { name: "nextjs", category: "Frameworks", icon: "devicon-nextjs-original"},
-    { name: "electron", category: "Frameworks", icon: "devicon-electron-original"},
-    { name: "materialui", category: "Frameworks", icon: "devicon-materialui-plain"},
-    { name: "tailwindcss", category: "Frameworks", icon: "devicon-tailwindcss-original-wordmark"},
-    { name: "bootstrap", category: "Frameworks", icon: "devicon-bootstrap-plain"},
-    { name: "jquery", category: "Frameworks", icon: "devicon-jquery-plain"},
-    { name: "typescript", category: "Languages", icon: "devicon-typescript-plain"},
-    { name: "javascript", category: "Languages", icon: "devicon-javascript-plain"},
-    { name: "csharp", category: "Languages", icon: "devicon-csharp-plain"},
-    { name: "python", category: "Languages", icon: "devicon-python-plain"},
-    { name: "html5", category: "Languages", icon: "devicon-html5-plain"},
-    { name: "css3", category: "Languages", icon: "devicon-css3-plain"},
-    { name: "sass", category: "Languages", icon: "devicon-sass-original"},
-    { name: "handlebars", category: "Languages", icon: "devicon-handlebars-plain"},
-    { name: "graphql", category: "Languages", icon: "devicon-graphql-plain"},
-    { name: "amazonwebservices", category: "Dev Ops", icon: "devicon-amazonwebservices-original"},
-    { name: "confluence", category: "Dev Ops", icon: "devicon-confluence-original"},
-    { name: "heroku", category: "Dev Ops", icon: "devicon-heroku-original"},
-    { name: "docker", category: "Dev Ops", icon: "devicon-docker-plain"},
-    { name: "travis", category: "Dev Ops", icon: "devicon-travis-plain"},
-    { name: "nodejs", category: "Dev Tools", icon: "devicon-nodejs-plain"},
-    { name: "bash", category: "Dev Tools", icon: "devicon-bash-plain"},
-    { name: "chrome", category: "Dev Tools", icon: "devicon-chrome-plain"},
-    { name: "ssh", category: "Dev Tools", icon: "devicon-ssh-original"},
-    { name: "vscode", category: "Dev Tools", icon: "devicon-vscode-plain"},
-    { name: "visualstudio", category: "Dev Tools", icon: "devicon-visualstudio-plain"},
-    { name: "webpack", category: "Dev Tools", icon: "devicon-webpack-plain"},
-    { name: "slack", category: "Communication", icon: "devicon-slack-plain"},
-    { name: "trello", category: "Communication", icon: "devicon-trello-plain"},
-    { name: "npm", category: "Version Control", icon: "devicon-npm-original-wordmark"},
-    { name: "git", category: "Version Control", icon: "devicon-git-plain"},
-    { name: "github", category: "Version Control", icon: "devicon-github-original"},
-    { name: "bitbucket", category: "Version Control", icon: "devicon-bitbucket-original"},
-    { name: "windows8", category: "Hardware", icon: "devicon-windows8-original"},
-    { name: "raspberrypi", category: "Hardware", icon: "devicon-raspberrypi-line"},
-    { name: "figma", category: "Content Creation", icon: "devicon-figma-plain"},
-    { name: "photoshop", category: "Content Creation", icon: "devicon-photoshop-plain"},
-    { name: "premierepro", category: "Content Creation", icon: "devicon-premierepro-plain"},
-    { name: "illustrator", category: "Content Creation", icon: "devicon-illustrator-plain"},
-    { name: "aftereffects", category: "Content Creation", icon: "devicon-aftereffects-plain"},
-    { name: "mongodb", category: "Databases", icon: "devicon-mongodb-plain"},
-    { name: "mysql", category: "Databases", icon: "devicon-mysql-plain"},
-    { name: "sequelize", category: "Databases", icon: "devicon-sequelize-plain"},
+    { name: 'React', category: "Frameworks", icon: "devicon-react-original"},
+    { name: 'Angular', category: "Frameworks", icon: "devicon-angularjs-plain"},
+    { name: 'Vue', category: "Frameworks", icon: "devicon-vuejs-plain"},
+    { name: 'Nextjs', category: "Frameworks", icon: "devicon-nextjs-original"},
+    { name: 'Electron', category: "Frameworks", icon: "devicon-electron-original"},
+    { name: 'Material UI', category: "Frameworks", icon: "devicon-materialui-plain"},
+    { name: 'Tailwind CSS', category: "Frameworks", icon: "devicon-tailwindcss-original-wordmark"},
+    { name: 'Bootstrap', category: "Frameworks", icon: "devicon-bootstrap-plain"},
+    { name: 'JQuery', category: "Frameworks", icon: "devicon-jquery-plain"},
+    { name: 'Typescript', category: "Languages", icon: "devicon-typescript-plain"},
+    { name: 'Javascript', category: "Languages", icon: "devicon-javascript-plain"},
+    { name: 'C Sharp', category: "Languages", icon: "devicon-csharp-plain"},
+    { name: 'Python', category: "Languages", icon: "devicon-python-plain"},
+    { name: 'Html5', category: "Languages", icon: "devicon-html5-plain"},
+    { name: 'CSS 3', category: "Languages", icon: "devicon-css3-plain"},
+    { name: 'Sass', category: "Languages", icon: "devicon-sass-original"},
+    { name: 'Handlebars', category: "Languages", icon: "devicon-handlebars-plain"},
+    { name: 'Graphql', category: "Languages", icon: "devicon-graphql-plain"},
+    { name: 'AWS', category: "Dev Ops", icon: "devicon-amazonwebservices-original"},
+    { name: 'Heroku', category: "Dev Ops", icon: "devicon-heroku-original"},
+    { name: 'Docker', category: "Dev Ops", icon: "devicon-docker-plain"},
+    { name: 'Travis', category: "Dev Ops", icon: "devicon-travis-plain"},
+    { name: 'Nodejs', category: "Dev Tools", icon: "devicon-nodejs-plain"},
+    { name: 'Bash', category: "Dev Tools", icon: "devicon-bash-plain"},
+    { name: 'Chrome', category: "Dev Tools", icon: "devicon-chrome-plain"},
+    { name: 'SSH', category: "Dev Tools", icon: "devicon-ssh-original"},
+    { name: 'VSCode', category: "Dev Tools", icon: "devicon-vscode-plain"},
+    { name: 'Visual Studio', category: "Dev Tools", icon: "devicon-visualstudio-plain"},
+    { name: 'Webpack', category: "Dev Tools", icon: "devicon-webpack-plain"},
+    { name: 'Confluence', category: "Communication", icon: "devicon-confluence-original"},
+    { name: 'Slack', category: "Communication", icon: "devicon-slack-plain"},
+    { name: 'Trello', category: "Communication", icon: "devicon-trello-plain"},
+    { name: 'Npm', category: "Version Control", icon: "devicon-npm-original-wordmark"},
+    { name: 'Git', category: "Version Control", icon: "devicon-git-plain"},
+    { name: 'GitHub', category: "Version Control", icon: "devicon-github-original"},
+    { name: 'Bitbucket', category: "Version Control", icon: "devicon-bitbucket-original"},
+    { name: 'Windows 8', category: "Hardware", icon: "devicon-windows8-original"},
+    { name: 'Raspberry Pi', category: "Hardware", icon: "devicon-raspberrypi-line"},
+    { name: 'Figma', category: "Content Creation", icon: "devicon-figma-plain"},
+    { name: 'Photoshop', category: "Content Creation", icon: "devicon-photoshop-plain"},
+    { name: 'Premiere Pro', category: "Content Creation", icon: "devicon-premierepro-plain"},
+    { name: 'Illustrator', category: "Content Creation", icon: "devicon-illustrator-plain"},
+    { name: 'After Effects', category: "Content Creation", icon: "devicon-aftereffects-plain"},
+    { name: 'Mongo DB', category: "Databases", icon: "devicon-mongodb-plain"},
+    { name: 'Mongoose', category: "Databases", icon: "devicon-mongodb-plain"},
+    { name: 'My SQL', category: "Databases", icon: "devicon-mysql-plain"},
+    { name: 'Sequelize', category: "Databases", icon: "devicon-sequelize-plain"},
+    { name: 'Fauna DB', category: "Databases", icon: ""},
+    { name: 'FQL', category: "Databases", icon: ""},
   ];
 
   let sections = [...new Set(technologies.map(t => t.category))]
@@ -59,13 +62,13 @@
 
 </script>
 
-<div class="font capabilities">
+<div class="styled-font capabilities">
   {#each sections as section}
     <div class="technologies">
       <h2>{section}</h2>
       <div class="icons">
         {#each getTechnologies(section) as technology}
-          <i class={`${technology.icon} colored`}></i>
+          <i class={`${technology.icon} colored`}><span class="label font">{`${technology.name}`}</span></i>
         {/each}
       </div>
     </div>
@@ -96,18 +99,29 @@
   }
 
   .capabilities .technologies .icons {
-    margin-top: 1em;
+    display: grid;
+    grid-gap: .5em;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr))
   }
 
-  .capabilities .technologies i {
-    padding: 0.25em;
+  .capabilities .technologies .icons i {
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 0.4em;
     margin-right: 0.5em;
     background-color: #E8EAED;
     border-radius: 0.2em;
+    cursor: default;
+  }
+
+  .capabilities .technologies .icons i span{
+    margin-top: 1em;
+    margin-left: 1em;
+    word-wrap: break-word;
   }
 
   .capabilities .technologies i:not(:hover) {
-    color: black;
+    color: #202124;
   }
 
   @media screen and (max-width: 1025px) {

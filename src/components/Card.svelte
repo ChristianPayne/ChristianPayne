@@ -7,11 +7,11 @@
 </script>
 
 <a class="card " href="{props.html_url}" target="_blank">
-  <h1 class="font">: {props.name} :</h1>
+  <h1 class="styled-font">: {props.name} :</h1>
   {#if props.description}
-    <h3 class="font">{props.description}</h3>
+    <h3 class="styled-font">{props.description}</h3>
   {/if}
-  <p class="font">Last Updated: { date.toDateString()}</p>
+  <p class="styled-font">Last Updated: { date.toDateString()}</p>
 </a>
 
 <style>
