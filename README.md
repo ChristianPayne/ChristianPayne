@@ -7,7 +7,6 @@
  GriffinBot >> *[Code](https://github.com/ChristianPayne/GriffinBot)* | *[In Action](https://twitch.tv/chrisgriffin522)*<br/>
 
 ## 🖥 Hosted Projects
-[IoT](https://iot.christianpayne.dev/)<br/>
 [Assets](https://assets.christianpayne.dev/)<br/>
 [FrankThePlumber](https://ftp.christianpayne.dev/)<br/>
 [GriffinBot](https://griffinbot.com/)<br/>
