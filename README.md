@@ -6,10 +6,10 @@
  Ennesults >> *[Code](https://github.com/ChristianPayne/Ennesults)* | *[In Action](https://twitch.tv/ennegineer)*<br/>
  GriffinBot >> *[Code](https://github.com/ChristianPayne/GriffinBot)* | *[In Action](https://twitch.tv/chrisgriffin522)*<br/>
 
-## 🖥 Hosted Projects
+<!-- ## 🖥 Hosted Projects
 [Assets](https://assets.christianpayne.dev/)<br/>
 [FrankThePlumber](https://ftp.christianpayne.dev/)<br/>
-[GriffinBot](https://griffinbot.com/)<br/>
+[GriffinBot](https://griffinbot.com/)<br/> -->
 ## 🏡 Past Work!
  [Genesis](https://www.genesis.com/us/en/genesis.html) Auto Show [Wheelstands](http://www.arts4allmedia.com/#gen-intro) <br/>
  [Hyundai](https://www.hyundaiusa.com/us/en) Auto Show [Wheelstands](http://www.arts4allmedia.com/#hy-intro)
