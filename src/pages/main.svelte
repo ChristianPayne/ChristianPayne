@@ -1,6 +1,4 @@
 <script>
-  import { onMount } from "svelte";
-  
   import Banner from "../components/Banner.svelte";
   import Capabilities from "../components/Capabilities.svelte";
   import Contact from "../components/Contact.svelte";
@@ -39,15 +37,13 @@
     <Projects/>
 
     <!-- Contact Section -->
-    <!-- <h1 class="styled-font section">
+    <h1 class="styled-font section">
       // Contact Me
       <span>
-        Would you like to talk? Find me here!  
-        <a href="https://www.linkedin.com/in/christianpayne522/" target="_blank">LinkedIn</a>
-        <a href="https://github.com/ChristianPayne" target="_blank">GitHub</a>
+        Would you like to talk (or just say hi)?
       </span>
     </h1>
-    <Contact/> -->
+    <Contact/>
   </div>
   <!-- <h1 class="styled-font section">Contact</h1> -->
 </div>

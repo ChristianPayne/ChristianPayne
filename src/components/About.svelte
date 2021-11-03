@@ -8,7 +8,7 @@
     </p> -->
     <h2>Full Stack Web Developer</h2>
     <p>
-      Based in California, currently working as a Software Engineer at <a href="https://modelmatch.com/">Model Match</a>, I started out in Full Stack when the pandemic hit. Shortly after, I enrolled online in UC Irvine's Web Dev bootcamp. Six fast-paced months later, I was well equiped to start a new job and have not looked back since.
+      Based in Southern California, currently working as a Software Engineer at <a href="https://modelmatch.com/">Model Match</a>, I started out in Full Stack when the pandemic hit. Shortly after, I enrolled online in UC Irvine's Web Dev bootcamp. Six fast-paced months later, I was well equiped to start a new job and have not looked back since.
     </p>
     <h2>Interactive Developer</h2>
     <p>
