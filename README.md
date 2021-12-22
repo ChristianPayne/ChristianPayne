@@ -2,9 +2,9 @@
  📚 Self taught [Unity3D](https://unity.com) Developer turned __Full Stack Web Developer__ certified through [UC Irvine DCE](https://ce.uci.edu/). <br/>
  Currently working with a lovely group of developers at [Model Match](https://modelmatch.com/).<br/>
  Find me over at [christianpayne.dev](https://www.christianpayne.dev/)
-## 🔨 Open Projects!
+<!-- ## 🔨 Open Projects!
  Ennesults >> *[Code](https://github.com/ChristianPayne/Ennesults)* | *[In Action](https://twitch.tv/ennegineer)*<br/>
- GriffinBot >> *[Code](https://github.com/ChristianPayne/GriffinBot)* | *[In Action](https://twitch.tv/chrisgriffin522)*<br/>
+ GriffinBot >> *[Code](https://github.com/ChristianPayne/GriffinBot)* | *[In Action](https://twitch.tv/chrisgriffin522)*<br/> -->
 
 <!-- ## 🖥 Hosted Projects
 [Assets](https://assets.christianpayne.dev/)<br/>
