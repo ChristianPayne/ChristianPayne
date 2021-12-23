@@ -3,7 +3,7 @@
     { name: 'React', category: "Frameworks", icon: "devicon-react-original"},
     { name: 'Angular', category: "Frameworks", icon: "devicon-angularjs-plain"},
     { name: 'Vue', category: "Frameworks", icon: "devicon-vuejs-plain"},
-    { name: 'Svelte', category: "Frameworks", icon: ""},
+    { name: 'Svelte', category: "Frameworks", icon: "devicon-svelte-plain"},
     { name: 'Nextjs', category: "Frameworks", icon: "devicon-nextjs-original"},
     { name: 'Electron', category: "Frameworks", icon: "devicon-electron-original"},
     { name: 'Material UI', category: "Frameworks", icon: "devicon-materialui-plain"},
@@ -11,6 +11,7 @@
     { name: 'Bootstrap', category: "Frameworks", icon: "devicon-bootstrap-plain"},
     { name: 'JQuery', category: "Frameworks", icon: "devicon-jquery-plain"},
     { name: 'Handlebars', category: "Frameworks", icon: "devicon-handlebars-plain"},
+    { name: 'Flutter', category: "Frameworks", icon: "devicon-flutter-plain"},
     { name: 'TypeScript', category: "Languages", icon: "devicon-typescript-plain"},
     { name: 'JavaScript', category: "Languages", icon: "devicon-javascript-plain"},
     { name: 'C#', category: "Languages", icon: "devicon-csharp-plain"},
@@ -19,11 +20,13 @@
     { name: 'CSS', category: "Languages", icon: "devicon-css3-plain"},
     { name: 'Sass', category: "Languages", icon: "devicon-sass-original"},
     { name: 'GraphQL', category: "Languages", icon: "devicon-graphql-plain"},
+    { name: 'Markdown', category: "Languages", icon: "devicon-markdown-original"},
     { name: 'AWS', category: "Dev Ops", icon: "devicon-amazonwebservices-original"},
     { name: 'Netlify', category: "Dev Ops", icon: ""},
     { name: 'Heroku', category: "Dev Ops", icon: "devicon-heroku-original"},
     { name: 'Docker', category: "Dev Ops", icon: "devicon-docker-plain"},
     { name: 'Travis', category: "Dev Ops", icon: "devicon-travis-plain"},
+    { name: 'SocketIO', category: "Dev Ops", icon: "devicon-socketio-original"},
     { name: 'Nodejs', category: "Dev Tools", icon: "devicon-nodejs-plain"},
     { name: 'Bash', category: "Dev Tools", icon: "devicon-bash-plain"},
     { name: 'Chrome', category: "Dev Tools", icon: "devicon-chrome-plain"},
@@ -40,9 +43,9 @@
     { name: 'Bitbucket', category: "Version Control", icon: "devicon-bitbucket-original"},
     { name: 'Windows', category: "Hardware", icon: "devicon-windows8-original"},
     { name: 'Raspberry Pi', category: "Hardware", icon: "devicon-raspberrypi-line"},
-    { name: 'Arduino', category: "Hardware", icon: ""},
-    { name: 'LEDs', category: "Hardware", icon: ""},
-    { name: 'Unity3D', category: "Programs", icon: ""},
+    { name: 'Arduino', category: "Hardware", icon: "devicon-arduino-plain"},
+    { name: 'WS2812B', category: "Hardware", icon: ""},
+    { name: 'Unity', category: "Programs", icon: "devicon-unity-original"},
     { name: 'Figma', category: "Programs", icon: "devicon-figma-plain"},
     { name: 'Photoshop', category: "Programs", icon: "devicon-photoshop-plain"},
     { name: 'Premiere Pro', category: "Programs", icon: "devicon-premierepro-plain"},
@@ -62,8 +65,8 @@
     return technologies.filter(t => t.category === name);
   }
 
-  console.log(sections);
-  console.log(getTechnologies(sections[0]));
+  // console.log(sections);
+  // console.log(getTechnologies(sections[0]));
 
 </script>
 
@@ -74,7 +77,11 @@
       <div class="icons">
         {#each getTechnologies(section) as technology}
           {#if technology.icon}
-            <i class={`${technology.icon} colored icon`}><span class="font">{`${technology.name}`}</span></i>
+            <i class={`${technology.icon} colored icon`}>
+              <span class="font">
+                {`${technology.name}`}
+              </span>
+            </i>
           {/if}
           {#if !technology.icon}
             <span class="icon">
