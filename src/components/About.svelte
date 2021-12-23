@@ -8,11 +8,11 @@
     </p> -->
     <h2>Full Stack Web Developer</h2>
     <p>
-      Based in Southern California, currently working as a Software Engineer at <a href="https://modelmatch.com/">Model Match</a>, I started out in Full Stack when the pandemic hit. Shortly after, I enrolled online in UC Irvine's Web Dev bootcamp. Six fast-paced months later, I was well equiped to start a new job and have not looked back since.
+      Based in Southern California, currently working as a Software Developer at <a href="https://modelmatch.com/">Model Match</a>. I started out in Full Stack when the pandemic hit and shortly after, I enrolled online in UC Irvine's Web Dev bootcamp. Six fast-paced months later, I was well equipped to start a new job and have not looked back since.
     </p>
     <h2>Interactive Developer</h2>
     <p>
-      I have a passion for creating interactive experiences. There is a game-like nature of interactive experiences that are very enticing to me. I started using Unity3D for interactives for autoshows back in 2016. That was my first time ever coding professionally. 
+      I have a passion for creating interactive experiences. There is a game-like nature of interactive experiences that are very enticing to me. I started using Unity to develop interactives for autoshows back in 2016. That was my first time ever coding professionally. 
     </p>
     <h2>Tinkerer</h2>
     <p>
@@ -22,6 +22,10 @@
     <p>
       I have been streaming since 2015 off and on. While I started streaming games back in the day, I found out that coding on streams was more in demand than I expected. Typically, I stream coding to an audience who is not as tech-savvy as I am, generally. Because of that, I need to break down what I am doing into simple english terms. This process helps me reinforce myself and my work.
     </p>
+    <!-- <h2>Teacher</h2>
+    <p>
+      I do the stuff and things to teach kids
+    </p> -->
   </div>
 </div>
 

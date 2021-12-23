@@ -1,5 +1,5 @@
 ## 🙋🏻‍♂️ About Me!
- 📚 Self taught [Unity3D](https://unity.com) Developer turned __Full Stack Web Developer__ certified through [UC Irvine DCE](https://ce.uci.edu/). <br/>
+ 📚 Self taught [Unity](https://unity.com) Developer turned __Full Stack Web Developer__ certified through [UC Irvine DCE](https://ce.uci.edu/). <br/>
  Currently working with a lovely group of developers at [Model Match](https://modelmatch.com/).<br/>
  Find me over at [christianpayne.dev](https://www.christianpayne.dev/)
 <!-- ## 🔨 Open Projects!

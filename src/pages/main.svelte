@@ -22,7 +22,7 @@
     <h1 class="styled-font section">
       // Full Stack Capabilities
       <span>
-        I am a web developer that loves to try all the things!
+        Learn all the things!
       </span>
     </h1>
     <Capabilities/>
