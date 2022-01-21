@@ -42,6 +42,7 @@
     { name: 'GitHub', category: "Version Control", icon: "devicon-github-original"},
     { name: 'Bitbucket', category: "Version Control", icon: "devicon-bitbucket-original"},
     { name: 'Windows', category: "Hardware", icon: "devicon-windows8-original"},
+    { name: 'OSX', category: "Hardware", icon: "devicon-apple-original"},
     { name: 'Raspberry Pi', category: "Hardware", icon: "devicon-raspberrypi-line"},
     { name: 'Arduino', category: "Hardware", icon: "devicon-arduino-plain"},
     { name: 'WS2812B', category: "Hardware", icon: ""},
