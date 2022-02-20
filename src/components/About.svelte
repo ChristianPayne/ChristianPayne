@@ -1,5 +1,5 @@
 <div class="about">
-  <img src="AboutMePic.jpg" alt="AboutMePic">
+  <img src="Headshot_1.png" alt="AboutMePic">
   <div class="styled-font">
     <i>"The trajectory of your life bends in the direction of your habits." - James Clear</i>
     <!-- <h2>About Me</h2>
