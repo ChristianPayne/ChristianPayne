@@ -3,6 +3,7 @@
   import Capabilities from "../components/Capabilities.svelte";
   import Contact from "../components/Contact.svelte";
   import About from "../components/About.svelte";
+  import GitHubRepos from "../components/GitHubRepos.svelte";
   import Projects from "../components/Projects.svelte";
 </script>
 
@@ -29,12 +30,22 @@
 
     <!-- Projects Section -->
     <h1 class="styled-font section">
-      // Recent Projects 
+      // Projects 
+      <span>
+        Look ma! I did the thing!
+      </span>
+    </h1>
+    <Projects/>
+
+
+    <!-- GitHub Section -->
+    <h1 class="styled-font section">
+      // Recent Commits 
       <span>
         My most recent commits to <a href="https://github.com/ChristianPayne">GitHub</a>.
       </span>
     </h1>
-    <Projects/>
+    <GitHubRepos/>
 
     <!-- Contact Section -->
     <h1 class="styled-font section">

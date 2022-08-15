@@ -1,22 +1,26 @@
-<script>
-  import Card from "./Card.svelte";
+<script lang="ts">
+  import type { Project as ProjectType } from "../types";
+  import Project from "./Project.svelte";
+  
 
-  async function fetchProjects() {
-    let response = await fetch('https://api.github.com/users/christianpayne/repos?sort=updated')
-    let repoList = await response.json();
-    console.log(repoList);
-    return repoList.slice(0,6);
-  }
-  let projects = fetchProjects();
+  let projects: ProjectType[] = [
+    {
+      title: 'The Event Community',
+      image: 'https://firebasestorage.googleapis.com/v0/b/christianpayne-dev.appspot.com/o/Makhsies.jpg?alt=media&token=4f60fe4f-5e2f-4d36-b633-168c0b224eba',
+      link: 'https://github.com/BAVEL-Technology/event-community'
+    },
+    {
+      title: 'Frank The Plumber',
+      image: 'https://firebasestorage.googleapis.com/v0/b/christianpayne-dev.appspot.com/o/Screen%20Shot%202022-03-14%20at%209.58.54%20PM.png?alt=media&token=8de7f66f-fc6b-4d09-8180-a9437bba9e2b',
+      link: 'https://github.com/ChristianPayne/franktheplumber'
+    },
+  ]
 </script>
-<div class="projects">
-  {#await projects then projects}
-  <div class="cards">
-    {#each projects as project}
-      <Card props={project}/>
-    {/each}
-  </div>
-  {/await}
+
+<div class="styled-font cards">
+  {#each projects as project}
+    <Project project={project}/>
+  {/each}
 </div>
 
 <style lang="scss">
