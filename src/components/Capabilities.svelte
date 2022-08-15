@@ -58,6 +58,7 @@
     { name: 'Sequelize', category: "Databases", icon: "devicon-sequelize-plain"},
     { name: 'Fauna DB', category: "Databases", icon: ""},
     { name: 'FQL', category: "Databases", icon: ""},
+    { name: 'Firebase', category: "Databases", icon: "devicon-firebase-plain"},
   ];
 
   let sections = [...new Set(technologies.map(t => t.category))]
