@@ -29,13 +29,13 @@
     <Capabilities/>
 
     <!-- Projects Section -->
-    <h1 class="styled-font section">
-      // Projects 
+    <!-- <h1 class="styled-font section">
+      // Projects
       <span>
         Look ma! I did the thing!
       </span>
     </h1>
-    <Projects/>
+    <Projects/> -->
 
 
     <!-- GitHub Section -->
