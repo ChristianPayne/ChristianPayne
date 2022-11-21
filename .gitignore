@@ -2,6 +2,6 @@
 /dist/
 /.vscode/
 .DS_Store
-
+tailwind.css
 # Local Netlify folder
 .netlify
