@@ -1,9 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer base {
-  .accent-color {
-    @apply dark:text-orange-400 text-blue-700
-  }
-}

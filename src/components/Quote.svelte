@@ -67,11 +67,10 @@
 
   function getRandomQuote () {
     let randomIndex = Math.floor(Math.random() * quotes.length);
-    console.log('🚀 ~ getRandomQuote ~ randomIndex', randomIndex, quotes.length);
-    return quotes[randomIndex];
+    return {quote: quotes[randomIndex], index: randomIndex};
   }
 
   let randomQuote = getRandomQuote();
 </script>
 
-<h2 class={classNames}><i>"{randomQuote.quote}"</i> - {randomQuote.author}</h2>
+<h2 class={classNames}><i>"{randomQuote.quote.quote}"</i> - {randomQuote.quote.author} {randomQuote.index + 1}/{quotes.length}</h2>
