@@ -73,4 +73,6 @@
   let randomQuote = getRandomQuote();
 </script>
 
-<h2 class={classNames}><i>"{randomQuote.quote.quote}"</i> - {randomQuote.quote.author} {randomQuote.index + 1}/{quotes.length}</h2>
+<h2 class={classNames + " cursor-pointer select-none"} on:click={() => randomQuote = getRandomQuote()}>
+  <i>"{randomQuote.quote.quote}"</i> - {randomQuote.quote.author} ({randomQuote.index + 1}/{quotes.length})
+</h2>

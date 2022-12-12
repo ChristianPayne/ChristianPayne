@@ -1,8 +1,9 @@
 <script lang="ts">
   import { Router, Route, Link } from "svelte-routing";
   import Home from "./pages/home.svelte";
+  import Button from "./components/Button.svelte";
 
-  let darkMode = true;
+  let darkMode = false;
 
   $: {
     let body = document.querySelector('body');
@@ -31,8 +32,8 @@
           <div class="text-center space-x-4 flex justify-between">
             <div class="w-6 h-6"></div>
             <div class="space-x-2">
-              <a class="h-6" href="https://christianpayne.substack.com/" target="_blank">Newsletter</a>
-              <a class="h-6 w-6" href="https://notes.christianpayne.dev/" target="_blank">Notes</a>
+              <Button style='link' linkRef="https://christianpayne.substack.com/">Newsletter</Button>
+              <Button style='link' linkRef="https://christianpayne.substack.com/">Notes</Button>
             </div>
             <span on:click={() => darkMode = !darkMode} class="cursor-pointer inline-block h-5">
               {#if darkMode}
