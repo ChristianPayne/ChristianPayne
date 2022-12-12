@@ -18,7 +18,7 @@
   {#await repos then repos}
     {#each repos as repo}
     <!-- Name | Desc | Last Updated -->
-      <Button style="link" class="group" linkRef="{repo.html_url}">
+      <Button type="link" class="group" linkRef="{repo.html_url}">
         <span>{repo.name}</span>
         {#if repo.description}
           <span class="dark:text-dark-accent text-light-accent dark:group-hover:text-dark-text group-hover:text-light-text">| {repo.description}</span>

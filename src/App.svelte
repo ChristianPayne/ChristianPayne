@@ -32,8 +32,8 @@
           <div class="text-center space-x-4 flex justify-between">
             <div class="w-6 h-6"></div>
             <div class="space-x-2">
-              <Button style='link' linkRef="https://christianpayne.substack.com/">Newsletter</Button>
-              <Button style='link' linkRef="https://christianpayne.substack.com/">Notes</Button>
+              <Button type='link' linkRef="https://christianpayne.substack.com/">Newsletter</Button>
+              <Button type='link' linkRef="https://christianpayne.substack.com/">Notes</Button>
             </div>
             <span on:click={() => darkMode = !darkMode} class="cursor-pointer inline-block h-5">
               {#if darkMode}
@@ -57,8 +57,8 @@
         <!-- Footer -->
         <footer class="flex space-x-4 [&>*]:h-6 transition-colors duration-500 dark:bg-dark-background dark:text-dark-text bg-light-background text-light-text fixed bottom-0 left-0 right-0 p-2">
           <p>Christian Payne</p>
-          <a href="https://www.github.com/christianpayne/" target="_blank">GitHub</a>
-          <a href="https://www.linkedin.com/in/christianpayne522/" target="_blank">LinkedIn</a>
+          <Button type='link' linkRef="https://www.github.com/christianpayne/">GitHub</Button>
+          <Button type='link' linkRef="https://www.linkedin.com/in/christianpayne522/">LinkedIn</Button>
         </footer>
     </Router>
   </div>

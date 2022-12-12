@@ -13,9 +13,9 @@
   I pride myself on attention to detail and creating strong foundations for others to build off of.
 </p>
 <p>Based in Southern California, I am currently working as a Developer at <a href="https://modelmatch.com/" class="cursor-pointer underline inline-block" target="_blank">Model Match</a>.</p>
-<Button style="default" onClick={() => console.log("JK, we have an onClick.")}></Button>
-<Button style="simple" onClick={() => console.log("JK, we have an onClick.")}></Button>
-<Button style="link" linkRef="#" onClick={() => console.log("JK, we have an onClick.")}></Button>
+<Button type="default" onClick={() => console.log("JK, we have an onClick.")}></Button>
+<Button type="simple" onClick={() => console.log("JK, we have an onClick.")}></Button>
+<Button type="link" linkRef="#"></Button>
 <h2 class="text-2xl">Case Studies</h2>
 <h2 class="text-2xl">Recent commits</h2>
 <GitHubRepos></GitHubRepos>
