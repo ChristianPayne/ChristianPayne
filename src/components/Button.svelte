@@ -6,15 +6,16 @@
   export let type: ButtonType = 'default';
   export let linkRef: string = "https://christianpayne.dev/"
 </script>
+
 {#if type === 'default'}
-  <button class="{classNames} dark:bg-dark-foreground dark:hover:bg-dark-accent bg-light-foreground hover:bg-light-accent px-4 py-2 rounded-sm select-none lowercase transition-all hover:scale-105 active:scale-95" on:click={onClick}>
+  <button class="{classNames} dark:bg-dark-foreground dark:hover:bg-dark-accent bg-light-foreground hover:bg-light-accent px-4 py-2 rounded-sm select-none lowercase transition-all hover:scale-105 active:scale-95 inline-block" on:click={onClick}>
     <slot>
       Default Button
     </slot>
   </button>
 {/if}
 {#if type === 'simple'}
-  <button class="{classNames} select-none lowercase group" on:click={onClick}>
+  <button class="{classNames} select-none lowercase group inline-block" on:click={onClick}>
     <slot>
       Simple Button
     </slot>
@@ -24,10 +25,10 @@
   </button>
 {/if}
 {#if type === 'link'}
-  <a class="{classNames} select-none lowercase relative group" href={linkRef} target="_blank" on:click={onClick}>
+  <a class="{classNames} select-none lowercase relative group inline-block" href={linkRef} target="_blank" on:click={onClick}>
     <slot>
       Link Button
     </slot>
-    <div class="bg-light-text absolute bottom-0 left-0 right-full group-hover:right-0 h-[1px] transition-all duration-300"></div>
+    <div class="bg-light-text dark:bg-dark-text absolute bottom-0 left-0 right-full group-hover:right-0 h-[1px] transition-all duration-300"></div>
   </a>
 {/if}

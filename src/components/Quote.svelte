@@ -63,6 +63,14 @@
       quote: 'You never really get an opportunity, you take an opportunity.',
       author: 'James Cameron'
     },
+    {
+      quote: 'The future belongs to those who learn more skills and combine them in creative ways.',
+      author: 'Robert Greene'
+    },
+    {
+      quote: 'Leadership is communicating to another their worth and potential so clearly that they are inspired to see it in themselves.',
+      author: 'Stephen R. Covey'
+    },
   ]
 
   function getRandomQuote () {

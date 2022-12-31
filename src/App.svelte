@@ -3,7 +3,7 @@
   import Home from "./pages/home.svelte";
   import Button from "./components/Button.svelte";
 
-  let darkMode = false;
+  let darkMode = true;
 
   $: {
     let body = document.querySelector('body');
@@ -24,7 +24,7 @@
 </style>
 
 <div class={darkMode ? "dark" : "light"}>
-  <div class="dark:bg-dark-background dark:text-dark-text bg-light-background text-light-text p-2 sm:p-4 transition-colors duration-500 space-y-4">
+  <div class="dark:bg-dark-background dark:text-dark-text bg-light-background text-light-text p-2 sm:p-4 transition-colors duration-500 space-y-4 md:w-1/2 md:mx-auto">
     <Router>
         <!-- Header -->
         <header class="sm:flex sm:justify-between items-center mb-4">
@@ -33,10 +33,10 @@
             <div class="w-6 h-6"></div>
             <div class="space-x-2">
               <Button type='link' linkRef="https://christianpayne.substack.com/">Newsletter</Button>
-              <Button type='link' linkRef="https://christianpayne.substack.com/">Notes</Button>
+              <Button type='link' linkRef="https://notes.christianpayne.dev/">Notes</Button>
             </div>
             <span on:click={() => darkMode = !darkMode} class="cursor-pointer inline-block h-5">
-              {#if darkMode}
+              {#if !darkMode}
               <!-- Moon -->
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
@@ -55,7 +55,7 @@
           <Route path="/" component={Home} />
         </main>
         <!-- Footer -->
-        <footer class="flex space-x-4 [&>*]:h-6 transition-colors duration-500 dark:bg-dark-background dark:text-dark-text bg-light-background text-light-text fixed bottom-0 left-0 right-0 p-2">
+        <footer class="flex space-x-4 [&>*]:h-6 transition-colors duration-500 dark:bg-dark-background dark:text-dark-text bg-light-background text-light-text fixed bottom-0 left-0 md:left-1/4 right-0 md:right-1/4 p-2">
           <p>Christian Payne</p>
           <Button type='link' linkRef="https://www.github.com/christianpayne/">GitHub</Button>
           <Button type='link' linkRef="https://www.linkedin.com/in/christianpayne522/">LinkedIn</Button>
