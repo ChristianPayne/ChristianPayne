@@ -4,7 +4,7 @@
   "scripts": {
     "start": "concurrently 'npm run build:css' 'vite --host'",
     "build:css": "npx tailwindcss -i ./src/app.css -o ./src/tailwind.css --watch",
-    "build": "vite build",
+    "build": "npx tailwindcss -i ./src/app.css -o ./src/tailwind.css && vite build",
     "serve": "vite preview"
   },
   "devDependencies": {
