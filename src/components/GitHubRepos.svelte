@@ -1,44 +1,32 @@
 <script>
-  import Card from "./Card.svelte";
-
+  import Button from "./Button.svelte";
   async function fetchRepos() {
     let response = await fetch('https://api.github.com/users/christianpayne/repos?sort=updated')
     let repoList = await response.json();
-    console.log(repoList);
-    return repoList.slice(0,6);
+    return repoList.slice(0,6).map(repo => {
+      let date = new Date(repo.updated_at)
+      // console.log(repo);
+      return {
+        ...repo,
+        formattedDate: (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear()
+      }
+    });
   }
   let repos = fetchRepos();
 </script>
-<div class="projects">
+<div>
   {#await repos then repos}
-  <div class="cards">
     {#each repos as repo}
-      <Card props={repo}/>
+    <!-- Name | Desc | Last Updated -->
+      <Button type="link" class="group" linkRef="{repo.html_url}">
+        <span>{repo.name}</span>
+        {#if repo.description}
+          <span class="dark:text-dark-accent text-light-accent dark:group-hover:text-dark-text group-hover:text-light-text">| {repo.description}</span>
+        {/if}
+        <!-- let date = props.updated_at ? new Date(props.updated_at) : new Date(); -->
+      </Button>
+      <span class="dark:text-dark-accent text-light-accent">{ repo.formattedDate}</span>
+      <br/>
     {/each}
-  </div>
   {/await}
 </div>
-
-<style lang="scss">
-  @import "../breakpoints.scss";
-
-  .cards {
-    display: grid;
-    font-size: 0.75em;
-
-    @include screen-sm-only {
-      grid-template-columns: 1fr;
-      grid-gap: 1em;
-    }
-
-    @include screen-md-up {
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 1.5em;
-    }
-    
-    @include screen-lg-up {
-      font-size: 1em;
-    }
-    
-  }
-</style>
