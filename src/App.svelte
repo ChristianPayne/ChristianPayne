@@ -33,7 +33,7 @@
             <div class="w-6 h-6"></div>
             <div class="space-x-2">
               <Button type='link' linkRef="https://christianpayne.substack.com/">Newsletter</Button>
-              <Button type='link' linkRef="https://notes.christianpayne.dev/">Notes</Button>
+              <!-- <Button type='link' linkRef="https://notes.christianpayne.dev/">Notes</Button> -->
             </div>
             <span on:click={() => darkMode = !darkMode} class="cursor-pointer inline-block h-5">
               {#if !darkMode}
