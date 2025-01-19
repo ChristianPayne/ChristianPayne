@@ -5,3 +5,5 @@
 tailwind.css
 # Local Netlify folder
 .netlify
+# Rust
+/target
