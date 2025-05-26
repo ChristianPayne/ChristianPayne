@@ -5,7 +5,7 @@ pub fn App() -> impl IntoView {
     let (count, set_count) = signal(0);
 
     view! {
-        <div class="p-4">
+        <div class="p-4 bg-red-300">
             <button on:click=move |_| *set_count.write() += 1>"Click me: " {count}</button>
             <p class="text-2xl">"Double count: " {move || count.get() * 2}</p>
         </div>
