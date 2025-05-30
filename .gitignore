@@ -7,3 +7,4 @@ tailwind.css
 .netlify
 # Rust
 /target
+target
