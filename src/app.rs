@@ -1,4 +1,4 @@
-use crate::components::{CaseStudies, Ennesults, Home};
+use crate::components::{CaseStudies, EnnesultsCaseStudy, Home};
 use leptos::prelude::*;
 use leptos_router::components::{Route, Router, Routes};
 use leptos_router::path;
@@ -21,11 +21,6 @@ pub fn App() -> impl IntoView {
                             </div>
 
                             <div class="flex flex-wrap gap-4 justify-center md:justify-end">
-                                <Link href="/ennesults">
-                                    <Button appearance=ButtonAppearance::Transparent>
-                                        "Ennesults"
-                                    </Button>
-                                </Link>
                                 <Link href="/case-studies">
                                     <Button appearance=ButtonAppearance::Transparent>
                                         "Case Studies"
@@ -44,8 +39,8 @@ pub fn App() -> impl IntoView {
                     <Layout class="px-4">
                         <Routes fallback=|| view! { <div>"Not Found"</div> }>
                             <Route path=path!("/") view=Home />
-                            <Route path=path!("/ennesults") view=Ennesults />
                             <Route path=path!("/case-studies") view=CaseStudies />
+                            <Route path=path!("/case-studies/ennesults") view=EnnesultsCaseStudy />
                         </Routes>
                     </Layout>
                 </Layout>

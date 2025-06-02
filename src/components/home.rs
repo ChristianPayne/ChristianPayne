@@ -89,9 +89,29 @@ pub fn Home() -> impl IntoView {
                     <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
                         I pride myself on attention to detail and creating strong foundations for others to build off of.
                     </p>
-                    <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+                    <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
                         Based in Southern California, I am currently working as a Developer at Model Match.
                     </p>
+
+                    <Link href="/case-studies">
+                        <div class="inline-flex items-center text-blue-600 font-medium transition-all duration-300 hover:text-blue-700 hover:translate-x-2 relative group cursor-pointer">
+                            "Case Studies"
+                            <svg
+                                class="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M9 5l7 7-7 7"
+                                ></path>
+                            </svg>
+                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-in-out group-hover:w-full"></div>
+                        </div>
+                    </Link>
                 </div>
             </div>
 
@@ -105,62 +125,81 @@ pub fn Home() -> impl IntoView {
 
                     // Timeline items
                     <div class="space-y-2">
-                        {timeline_items.iter().enumerate().map(|(index, item)| {
-                            let is_even = index % 2 == 0;
-                            let year = item.year.clone();
-                            let description = item.description.clone();
-                            let is_main_event = matches!(item.event_type, EventType::MainEvent);
+                        {timeline_items
+                            .iter()
+                            .enumerate()
+                            .map(|(index, item)| {
+                                let is_even = index % 2 == 0;
+                                let year = item.year.clone();
+                                let description = item.description.clone();
+                                let is_main_event = matches!(item.event_type, EventType::MainEvent);
+                                let left_content = if is_even {
+                                    Either::Left(
 
-                            let left_content = if is_even {
-                                Either::Left(view! {
-                                    <div class="hidden md:block w-1/2"></div>
-                                })
-                            } else {
-                                Either::Right(view! {
-                                    <div class="w-full md:w-1/2 md:pr-8 pl-8 text-left md:text-right mb-4 md:mb-0">
-                                        <h3 class="text-lg font-semibold">{year.clone()}</h3>
-                                        <p class="text-gray-600 mt-2">{description.clone()}</p>
-                                        {if !is_main_event {
-                                            view! { <p class="text-sm text-gray-500 mt-1">"Project Milestone"</p> }
-                                        } else {
-                                            view! { <p class="text-sm text-blue-500 mt-1">"Career Milestone"</p> }
-                                        }}
+                                        view! { <div class="hidden md:block w-1/2"></div> },
+                                    )
+                                } else {
+                                    Either::Right(
+                                        view! {
+                                            <div class="w-full md:w-1/2 md:pr-8 pl-8 text-left md:text-right mb-4 md:mb-0">
+                                                <h3 class="text-lg font-semibold">{year.clone()}</h3>
+                                                <p class="text-gray-600 mt-2">{description.clone()}</p>
+                                                {if !is_main_event {
+                                                    view! {
+                                                        <p class="text-sm text-gray-500 mt-1">
+                                                            "Project Milestone"
+                                                        </p>
+                                                    }
+                                                } else {
+                                                    view! {
+                                                        <p class="text-sm text-blue-500 mt-1">"Career Milestone"</p>
+                                                    }
+                                                }}
+                                            </div>
+                                        },
+                                    )
+                                };
+                                let right_content = if is_even {
+                                    Either::Left(
+
+                                        view! {
+                                            <div class="w-full md:w-1/2 md:pl-8 pl-8 text-left mt-4 md:mt-0">
+                                                <h3 class="text-lg font-semibold">{year}</h3>
+                                                <p class="text-gray-600 mt-2">{description}</p>
+                                                {if !is_main_event {
+                                                    view! {
+                                                        <p class="text-sm text-gray-500 mt-1">
+                                                            "Project Milestone"
+                                                        </p>
+                                                    }
+                                                } else {
+                                                    view! {
+                                                        <p class="text-sm text-blue-500 mt-1">"Career Milestone"</p>
+                                                    }
+                                                }}
+                                            </div>
+                                        },
+                                    )
+                                } else {
+                                    Either::Right(
+                                        view! { <div class="hidden md:block w-1/2"></div> },
+                                    )
+                                };
+
+                                view! {
+                                    <div class="relative flex flex-col md:flex-row items-start md:items-center">
+                                        {left_content}
+                                        <div class=move || {
+                                            if is_main_event {
+                                                "absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-blue-500"
+                                            } else {
+                                                "absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 border-blue-500"
+                                            }
+                                        }></div> {right_content}
                                     </div>
-                                })
-                            };
-
-                            let right_content = if is_even {
-                                Either::Left(view! {
-                                    <div class="w-full md:w-1/2 md:pl-8 pl-8 text-left mt-4 md:mt-0">
-                                        <h3 class="text-lg font-semibold">{year}</h3>
-                                        <p class="text-gray-600 mt-2">{description}</p>
-                                        {if !is_main_event {
-                                            view! { <p class="text-sm text-gray-500 mt-1">"Project Milestone"</p> }
-                                        } else {
-                                            view! { <p class="text-sm text-blue-500 mt-1">"Career Milestone"</p> }
-                                        }}
-                                    </div>
-                                })
-                            } else {
-                                Either::Right(view! {
-                                    <div class="hidden md:block w-1/2"></div>
-                                })
-                            };
-
-                            view! {
-                                <div class="relative flex flex-col md:flex-row items-start md:items-center">
-                                    {left_content}
-                                    <div class=move || {
-                                        if is_main_event {
-                                            "absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-blue-500"
-                                        } else {
-                                            "absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 border-blue-500"
-                                        }
-                                    }></div>
-                                    {right_content}
-                                </div>
-                            }
-                        }).collect::<Vec<_>>()}
+                                }
+                            })
+                            .collect::<Vec<_>>()}
                     </div>
                 </div>
             </div>

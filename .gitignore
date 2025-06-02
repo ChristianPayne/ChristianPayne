@@ -8,3 +8,4 @@ tailwind.css
 # Rust
 /target
 target
+.env
