@@ -228,7 +228,7 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
     });
 
     view! {
-        <div class="min-h-screen">
+        <div class="min-h-screen" style="background-color: #fafafa; background-image: radial-gradient(circle, rgba(0,0,0,.15) 1px, transparent 1px); background-size: 20px 20px;">
             // Hero Section
             <div class="relative overflow-hidden">
                 <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
@@ -241,18 +241,18 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                             {move || repo_data.get().as_ref().and_then(|r| r.description.clone()).unwrap_or_else(|| "A Tauri/Rust Twitch bot that kindly insults people in chat".to_string())}
                         </p>
                         <div class="flex flex-wrap justify-center gap-4 mb-8">
-                            <span class="px-4 py-2 rounded-full border">
+                            <span class="px-4 py-2 rounded-full border bg-white shadow-sm">
                                 {move || repo_data.get().as_ref().and_then(|r| r.language.clone()).unwrap_or_else(|| "Rust".to_string())}
                             </span>
-                            <span class="px-4 py-2 rounded-full border">"Tauri"</span>
-                            <span class="px-4 py-2 rounded-full border">"SvelteKit"</span>
-                            <span class="px-4 py-2 rounded-full border">"Twitch IRC"</span>
+                            <span class="px-4 py-2 rounded-full border bg-white shadow-sm">"Tauri"</span>
+                            <span class="px-4 py-2 rounded-full border bg-white shadow-sm">"SvelteKit"</span>
+                            <span class="px-4 py-2 rounded-full border bg-white shadow-sm">"Twitch IRC"</span>
                         </div>
                         <div class="flex justify-center gap-6">
                             <a
                                 href={move || repo_data.get().as_ref().map(|r| r.html_url.clone()).unwrap_or_else(|| "https://github.com/ChristianPayne/ennesults-rs".to_string())}
                                 target="_blank"
-                                class="inline-flex items-center px-6 py-3 rounded-lg transition-colors border"
+                                class="inline-flex items-center px-6 py-3 rounded-lg transition-colors border bg-white shadow-sm hover:bg-gray-50"
                             >
                                 <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
@@ -280,13 +280,13 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                                 "The bot also features updater functionality, allowing Enne to easily update the bot to the latest version without having to manually download the latest release."
                             </p>
                             <div class="grid grid-cols-2 gap-6">
-                                <div class="rounded-lg p-4 border">
+                                <div class="rounded-lg p-4 border bg-white shadow-sm">
                                     <h3 class="font-semibold mb-2">
                                         {move || total_releases.get().map(|r| format!("{} Releases", r)).unwrap_or_else(|| "Loading...".to_string())}
                                     </h3>
                                     <p class="text-sm">"Stable iterations"</p>
                                 </div>
-                                <div class="rounded-lg p-4 border">
+                                <div class="rounded-lg p-4 border bg-white shadow-sm">
                                     <h3 class="font-semibold mb-2">
                                         {move || latest_release.get().as_ref().map(|r| r.tag_name.clone()).unwrap_or_else(|| "Loading...".to_string())}
                                     </h3>
@@ -303,51 +303,51 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 class="text-4xl font-bold text-center mb-12">"Technical Architecture"</h2>
                     <div class="grid md:grid-cols-2 gap-8">
-                        <div class="rounded-xl p-8 border">
+                        <div class="rounded-xl p-8 border bg-white shadow-sm">
                             <h3 class="text-2xl font-bold mb-6">"Frontend Stack"</h3>
                             <div class="space-y-4">
                                 <div class="flex items-center">
-                                    <div class="w-3 h-3 rounded-full mr-3 border"></div>
+                                    <div class="w-3 h-3 rounded-full mr-3 border bg-white"></div>
                                     <span class="font-medium">"SvelteKit"</span>
                                     <span class="ml-auto text-sm">"Modern UI framework"</span>
                                 </div>
                                 <div class="flex items-center">
-                                    <div class="w-3 h-3 rounded-full mr-3 border"></div>
+                                    <div class="w-3 h-3 rounded-full mr-3 border bg-white"></div>
                                     <span class="font-medium">"TailwindCSS"</span>
                                     <span class="ml-auto text-sm">"Utility-first styling"</span>
                                 </div>
                                 <div class="flex items-center">
-                                    <div class="w-3 h-3 rounded-full mr-3 border"></div>
+                                    <div class="w-3 h-3 rounded-full mr-3 border bg-white"></div>
                                     <span class="font-medium">"ShadCN (Svelte)"</span>
                                     <span class="ml-auto text-sm">"Component library"</span>
                                 </div>
                                 <div class="flex items-center">
-                                    <div class="w-3 h-3 rounded-full mr-3 border"></div>
+                                    <div class="w-3 h-3 rounded-full mr-3 border bg-white"></div>
                                     <span class="font-medium">"Heroicons"</span>
                                     <span class="ml-auto text-sm">"Icon system"</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="rounded-xl p-8 border">
+                        <div class="rounded-xl p-8 border bg-white shadow-sm">
                             <h3 class="text-2xl font-bold mb-6">"Backend Stack"</h3>
                             <div class="space-y-4">
                                 <div class="flex items-center">
-                                    <div class="w-3 h-3 rounded-full mr-3 border"></div>
+                                    <div class="w-3 h-3 rounded-full mr-3 border bg-white"></div>
                                     <span class="font-medium">"Tauri"</span>
                                     <span class="ml-auto text-sm">"Desktop app framework"</span>
                                 </div>
                                 <div class="flex items-center">
-                                    <div class="w-3 h-3 rounded-full mr-3 border"></div>
+                                    <div class="w-3 h-3 rounded-full mr-3 border bg-white"></div>
                                     <span class="font-medium">"Rust"</span>
                                     <span class="ml-auto text-sm">"Systems programming"</span>
                                 </div>
                                 <div class="flex items-center">
-                                    <div class="w-3 h-3 rounded-full mr-3 border"></div>
+                                    <div class="w-3 h-3 rounded-full mr-3 border bg-white"></div>
                                     <span class="font-medium">"Twitch IRC"</span>
                                     <span class="ml-auto text-sm">"Chat integration"</span>
                                 </div>
                                 <div class="flex items-center">
-                                    <div class="w-3 h-3 rounded-full mr-3 border"></div>
+                                    <div class="w-3 h-3 rounded-full mr-3 border bg-white"></div>
                                     <span class="font-medium">"TS RS"</span>
                                     <span class="ml-auto text-sm">"Type generation"</span>
                                 </div>
@@ -364,8 +364,8 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                         "Key Features & Capabilities"
                     </h2>
                     <div class="grid md:grid-cols-3 gap-8">
-                        <div class="rounded-xl p-6 border transition-colors">
-                            <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4 border">
+                        <div class="rounded-xl p-6 border transition-colors bg-white shadow-sm">
+                            <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4 border bg-gray-50">
                                 <svg
                                     class="w-6 h-6"
                                     fill="none"
@@ -385,8 +385,8 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                                 "Seamlessly connects to Twitch IRC, monitoring chat activity and responding with perfectly timed, 'insults' that enhance community engagement."
                             </p>
                         </div>
-                        <div class="rounded-xl p-6 border transition-colors">
-                            <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4 border">
+                        <div class="rounded-xl p-6 border transition-colors bg-white shadow-sm">
+                            <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4 border bg-gray-50">
                                 <svg
                                     class="w-6 h-6"
                                     fill="none"
@@ -412,8 +412,8 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                                 "Native desktop experience with Tauri, providing low resource usage, fast performance, and the ability for streamers to host the bot locally."
                             </p>
                         </div>
-                        <div class="rounded-xl p-6 border transition-colors">
-                            <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4 border">
+                        <div class="rounded-xl p-6 border transition-colors bg-white shadow-sm">
+                            <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4 border bg-gray-50">
                                 <svg
                                     class="w-6 h-6"
                                     fill="none"
@@ -446,8 +446,8 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                             <div class="absolute left-8 top-0 bottom-0 w-0.5 border-l"></div>
                             <div class="space-y-12">
                                 <div class="relative flex items-start">
-                                    <div class="absolute left-6 w-4 h-4 rounded-full border-4"></div>
-                                    <div class="ml-16 rounded-lg p-6 border">
+                                    <div class="absolute left-6 w-4 h-4 rounded-full border-4 bg-white"></div>
+                                    <div class="ml-16 rounded-lg p-6 border bg-white shadow-sm">
                                         <h3 class="text-xl font-bold mb-2">"Project Inception"</h3>
                                         <p>
                                             "Started as a learning project to explore Rust and Tauri while improving upon the original JavaScript bot. The goal was to create a more maintainable, performant solution."
@@ -455,8 +455,8 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                                     </div>
                                 </div>
                                 <div class="relative flex items-start">
-                                    <div class="absolute left-6 w-4 h-4 rounded-full border-4"></div>
-                                    <div class="ml-16 rounded-lg p-6 border">
+                                    <div class="absolute left-6 w-4 h-4 rounded-full border-4 bg-white"></div>
+                                    <div class="ml-16 rounded-lg p-6 border bg-white shadow-sm">
                                         <h3 class="text-xl font-bold mb-2">
                                             "Architecture Design"
                                         </h3>
@@ -466,8 +466,8 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                                     </div>
                                 </div>
                                 <div class="relative flex items-start">
-                                    <div class="absolute left-6 w-4 h-4 rounded-full border-4"></div>
-                                    <div class="ml-16 rounded-lg p-6 border">
+                                    <div class="absolute left-6 w-4 h-4 rounded-full border-4 bg-white"></div>
+                                    <div class="ml-16 rounded-lg p-6 border bg-white shadow-sm">
                                         <h3 class="text-xl font-bold mb-2">"IRC Integration"</h3>
                                         <p>
                                             "Implemented robust Twitch IRC connectivity with proper error handling, reconnection logic, and rate limiting to ensure reliable chat interaction."
@@ -475,8 +475,8 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                                     </div>
                                 </div>
                                 <div class="relative flex items-start">
-                                    <div class="absolute left-6 w-4 h-4 rounded-full border-4"></div>
-                                    <div class="ml-16 rounded-lg p-6 border">
+                                    <div class="absolute left-6 w-4 h-4 rounded-full border-4 bg-white"></div>
+                                    <div class="ml-16 rounded-lg p-6 border bg-white shadow-sm">
                                         <h3 class="text-xl font-bold mb-2">
                                             "User Experience Focus"
                                         </h3>
@@ -486,11 +486,11 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                                     </div>
                                 </div>
                                 <div class="relative flex items-start">
-                                    <div class="absolute left-6 w-4 h-4 rounded-full border-4"></div>
-                                    <div class="ml-16 rounded-lg p-6 border">
+                                    <div class="absolute left-6 w-4 h-4 rounded-full border-4 bg-white"></div>
+                                    <div class="ml-16 rounded-lg p-6 border bg-white shadow-sm">
                                         <h3 class="text-xl font-bold mb-2">"Ongoing Collaboration"</h3>
                                         <p>
-                                            "This project continues to evolve through collaboration with Enne and the streaming community. Regular feedback sessions drive new feature development, from command customization to UI improvements."
+                                            "This project continues to evolve through collaboration with Enne and the streaming community. Regular feedback sessions drive new feature development, from command customization to UI improvements. The modular architecture enables rapid iteration and experimentation with new ideas."
                                         </p>
                                     </div>
                                 </div>
@@ -508,19 +508,19 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                         <div>
                             <h3 class="text-2xl font-bold mb-6">"Performance Optimizations"</h3>
                             <div class="space-y-4">
-                                <div class="rounded-lg p-4 border">
+                                <div class="rounded-lg p-4 border bg-white shadow-sm">
                                     <h4 class="font-semibold mb-2">"Memory Efficiency"</h4>
                                     <p class="text-sm">
                                         "Rust's zero-cost abstractions and ownership model ensure minimal memory usage compared to the JavaScript predecessor."
                                     </p>
                                 </div>
-                                <div class="rounded-lg p-4 border">
+                                <div class="rounded-lg p-4 border bg-white shadow-sm">
                                     <h4 class="font-semibold mb-2">"Native Performance"</h4>
                                     <p class="text-sm">
                                         "Tauri's native backend provides desktop-class performance while maintaining web technology familiarity."
                                     </p>
                                 </div>
-                                <div class="rounded-lg p-4 border">
+                                <div class="rounded-lg p-4 border bg-white shadow-sm">
                                     <h4 class="font-semibold mb-2">"Async Architecture"</h4>
                                     <p class="text-sm">
                                         "Non-blocking IRC handling ensures UI responsiveness even during high chat activity periods."
@@ -531,19 +531,19 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                         <div>
                             <h3 class="text-2xl font-bold mb-6">"Developer Experience"</h3>
                             <div class="space-y-4">
-                                <div class="rounded-lg p-4 border">
+                                <div class="rounded-lg p-4 border bg-white shadow-sm">
                                     <h4 class="font-semibold mb-2">"Type Safety"</h4>
                                     <p class="text-sm">
                                         "Full type safety from Rust backend to TypeScript frontend using TS RS for automatic type generation."
                                     </p>
                                 </div>
-                                <div class="rounded-lg p-4 border">
+                                <div class="rounded-lg p-4 border bg-white shadow-sm">
                                     <h4 class="font-semibold mb-2">"Hot Reloading"</h4>
                                     <p class="text-sm">
                                         "Development workflow with instant feedback using Vite's HMR and Tauri's development server."
                                     </p>
                                 </div>
-                                <div class="rounded-lg p-4 border">
+                                <div class="rounded-lg p-4 border bg-white shadow-sm">
                                     <h4 class="font-semibold mb-2">"Cross-Platform"</h4>
                                     <p class="text-sm">
                                         "Single codebase deploys to Windows, macOS, and Linux with platform-specific optimizations."
@@ -566,7 +566,7 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                         <a
                             href="https://github.com/ChristianPayne/ennesults-rs"
                             target="_blank"
-                            class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all transform hover:scale-105 border"
+                            class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all transform hover:scale-105 border bg-white shadow-sm hover:bg-gray-50"
                         >
                             <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
@@ -576,7 +576,7 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                         <a
                             href="https://github.com/ChristianPayne/ennesults-rs/releases"
                             target="_blank"
-                            class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all border"
+                            class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all border bg-white shadow-sm hover:bg-gray-50"
                         >
                             <svg
                                 class="w-5 h-5 mr-2"

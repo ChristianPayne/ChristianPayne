@@ -7,156 +7,133 @@ pub struct CaseStudy {
     pub description: String,
     pub image_path: String,
     pub slug: String, // URL-friendly version of title
+    pub technologies: Vec<String>,
+    pub github_url: String,
 }
 
 #[component]
 pub fn CaseStudies() -> impl IntoView {
     let case_studies = vec![
         CaseStudy {
-            title: "E-commerce Platform Redesign".to_string(),
-            description: "A comprehensive redesign of a major e-commerce platform that improved user experience and increased conversion rates by 35%. This project involved user research, prototyping, and extensive A/B testing to optimize the checkout flow and product discovery features.".to_string(),
+            title: "Ennesults - Twitch Chat Bot".to_string(),
+            description: "A sophisticated Twitch chat bot built with Rust and Tauri, originally created for streamer Ennegineer. This desktop application features chat integration, native desktop performance, and type-safe architecture with automatic updates.".to_string(),
             image_path: "images/example-twitch.jpg".to_string(),
             slug: "ennesults".to_string(),
-        },
-        CaseStudy {
-            title: "AI-Powered Analytics Dashboard".to_string(), 
-            description: "Development of a sophisticated analytics dashboard that leverages machine learning to provide actionable insights for business users. The solution reduced data analysis time by 80% and improved decision-making across multiple departments.".to_string(),
-            image_path: "images/analytics-dashboard.jpg".to_string(),
-            slug: "".to_string(),
-        },
-        CaseStudy {
-            title: "Mobile App for Healthcare".to_string(),
-            description: "A mobile application designed to streamline patient care and improve communication between healthcare providers. The app increased patient satisfaction scores by 25% and reduced administrative overhead by 40%.".to_string(),
-            image_path: "images/healthcare-app.jpg".to_string(),
-            slug: "".to_string(),
-        },
-        CaseStudy {
-            title: "Enterprise System Integration".to_string(),
-            description: "A complex integration project that connected multiple legacy systems with modern cloud-based solutions. This initiative improved data consistency and reduced operational costs by 30% while maintaining 99.9% uptime.".to_string(),
-            image_path: "images/enterprise-integration.jpg".to_string(),
-            slug: "".to_string(),
+            technologies: vec!["Rust".to_string(), "Tauri".to_string(), "SvelteKit".to_string(), "Twitch IRC".to_string()],
+            github_url: "https://github.com/ChristianPayne/ennesults-rs".to_string(),
         },
     ];
 
     view! {
-        <div class="container mx-auto max-w-7xl">
-            <div class="my-8">
-                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">
-                    Case Studies
-                </h1>
-                <p class="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-                    "Explore detailed insights into my recent projects, showcasing the challenges faced, solutions implemented, and results achieved."
-                </p>
-
-                <div class="space-y-16">
-                    {case_studies
-                        .iter()
-                        .enumerate()
-                        .map(|(index, case_study)| {
-                            let is_even = index % 2 == 0;
-                            let title = case_study.title.clone();
-                            let description = case_study.description.clone();
-                            let image_path = case_study.image_path.clone();
-                            let slug = case_study.slug.clone();
-
-                            view! {
-                                <Link href=format!("/case-studies/{}", slug)>
-                                    <Button
-                                        appearance=ButtonAppearance::Transparent
-                                        class="w-full p-0 h-auto group relative overflow-hidden transition-all duration-300 ease-in-out hover:bg-gray-50"
-                                    >
-                                        <div class="w-full relative">
-                                            {if is_even {
-                                                // Image on left, content on right
-                                                view! {
-                                                    <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 py-8">
-                                                        <div class="w-full lg:w-1/2">
-                                                            <div class="overflow-hidden rounded-lg shadow-lg">
-                                                                <img
-                                                                    src=image_path
-                                                                    alt=format!("{} case study image", title)
-                                                                    class="w-full h-64 lg:h-80 object-cover transition-transform duration-300 group-hover:scale-105"
-                                                                />
-                                                            </div>
-                                                        </div>
-                                                        <div class="w-full lg:w-1/2 text-left">
-                                                            <h2 class="text-2xl lg:text-3xl font-bold text-gray-800 mb-4 transition-colors duration-300 group-hover:text-blue-600">
-                                                                {title}
-                                                            </h2>
-                                                            <p class="text-lg text-gray-600 leading-relaxed mb-6">
-                                                                {description}
-                                                            </p>
-                                                            <div class="inline-flex items-center text-blue-600 font-medium transition-all duration-300 group-hover:text-blue-700 group-hover:translate-x-2 relative">
-                                                                "View Case Study"
-                                                                <svg
-                                                                    class="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
-                                                                    fill="none"
-                                                                    stroke="currentColor"
-                                                                    viewBox="0 0 24 24"
-                                                                >
-                                                                    <path
-                                                                        stroke-linecap="round"
-                                                                        stroke-linejoin="round"
-                                                                        stroke-width="2"
-                                                                        d="M9 5l7 7-7 7"
-                                                                    ></path>
-                                                                // Animated underline for "View Case Study"
-                                                                </svg>
-                                                                <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-in-out group-hover:w-full"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                }
-                                            } else {
-                                                // Image on right, content on left
-                                                view! {
-                                                    <div class="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12 py-8">
-                                                        <div class="w-full lg:w-1/2">
-                                                            <div class="overflow-hidden rounded-lg shadow-lg">
-                                                                <img
-                                                                    src=image_path
-                                                                    alt=format!("{} case study image", title)
-                                                                    class="w-full h-64 lg:h-80 object-cover transition-transform duration-300 group-hover:scale-105"
-                                                                />
-                                                            </div>
-                                                        </div>
-                                                        <div class="w-full lg:w-1/2 text-left">
-                                                            <h2 class="text-2xl lg:text-3xl font-bold text-gray-800 mb-4 transition-colors duration-300 group-hover:text-blue-600">
-                                                                {title}
-                                                            </h2>
-                                                            <p class="text-lg text-gray-600 leading-relaxed mb-6">
-                                                                {description}
-                                                            </p>
-                                                            <div class="inline-flex items-center text-blue-600 font-medium transition-all duration-300 group-hover:text-blue-700 group-hover:translate-x-2 relative">
-                                                                "View Case Study"
-                                                                <svg
-                                                                    class="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
-                                                                    fill="none"
-                                                                    stroke="currentColor"
-                                                                    viewBox="0 0 24 24"
-                                                                >
-                                                                    <path
-                                                                        stroke-linecap="round"
-                                                                        stroke-linejoin="round"
-                                                                        stroke-width="2"
-                                                                        d="M9 5l7 7-7 7"
-                                                                    ></path>
-                                                                // Animated underline for "View Case Study"
-                                                                </svg>
-                                                                <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-in-out group-hover:w-full"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                }
-                                            }}
-                                        </div>
-                                    </Button>
-                                </Link>
-                            }
-                        })
-                        .collect::<Vec<_>>()}
+        <div class="min-h-screen" style="background-color: #fafafa; background-image: radial-gradient(circle, rgba(0,0,0,.15) 1px, transparent 1px); background-size: 20px 20px;">
+            // Hero Section
+            <div class="relative overflow-hidden">
+                <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+                    <div class="text-center">
+                        <h1 class="text-5xl md:text-7xl font-bold mb-6">Case Studies</h1>
+                        <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto text-gray-600">
+                            "Explore detailed insights into my projects, showcasing the challenges faced, solutions implemented, and results achieved."
+                        </p>
+                    </div>
                 </div>
             </div>
+
+            // Case Studies Section
+            <section class="my-8">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="space-y-16">
+                        {case_studies
+                            .iter()
+                            .map(|case_study| {
+                                let title = case_study.title.clone();
+                                let description = case_study.description.clone();
+                                let image_path = case_study.image_path.clone();
+                                let slug = case_study.slug.clone();
+                                let technologies = case_study.technologies.clone();
+                                let github_url = case_study.github_url.clone();
+
+                                view! {
+                                    <div class="rounded-xl p-8 border bg-white shadow-sm hover:shadow-lg transition-all duration-300">
+                                        <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+                                            // Image Section
+                                            <div class="w-full lg:w-1/2">
+                                                <div class="overflow-hidden rounded-lg shadow-lg">
+                                                    <img
+                                                        src=image_path
+                                                        alt=format!("{} case study image", title)
+                                                        class="w-full h-64 lg:h-80 object-cover transition-transform duration-300 hover:scale-105"
+                                                    />
+                                                </div>
+                                            </div>
+
+                                            // Content Section
+                                            <div class="w-full lg:w-1/2 text-left">
+                                                <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+                                                    {title.clone()}
+                                                </h2>
+
+                                                // Technology Tags
+                                                <div class="flex flex-wrap gap-3 mb-6">
+                                                    {technologies
+                                                        .iter()
+                                                        .map(|tech| {
+                                                            view! {
+                                                                <span class="px-4 py-2 rounded-full border bg-gray-50 text-sm font-medium">
+                                                                    {tech.clone()}
+                                                                </span>
+                                                            }
+                                                        })
+                                                        .collect::<Vec<_>>()}
+                                                </div>
+
+                                                <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                                                    {description}
+                                                </p>
+
+                                                // Action Buttons
+                                                <div class="flex flex-col sm:flex-row gap-4">
+                                                    <Link href=format!("/case-studies/{}", slug)>
+                                                        <Button
+                                                            appearance=ButtonAppearance::Primary
+                                                            class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all transform hover:scale-105"
+                                                        >
+                                                            "View Case Study"
+                                                            <svg
+                                                                class="ml-2 w-5 h-5"
+                                                                fill="none"
+                                                                stroke="currentColor"
+                                                                viewBox="0 0 24 24"
+                                                            >
+                                                                <path
+                                                                    stroke-linecap="round"
+                                                                    stroke-linejoin="round"
+                                                                    stroke-width="2"
+                                                                    d="M9 5l7 7-7 7"
+                                                                ></path>
+                                                            </svg>
+                                                        </Button>
+                                                    </Link>
+
+                                                    <a
+                                                        href=github_url
+                                                        target="_blank"
+                                                        class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold border bg-white hover:bg-gray-50 transition-colors"
+                                                    >
+                                                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                                        </svg>
+                                                        "View on GitHub"
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            })
+                            .collect::<Vec<_>>()}
+                    </div>
+                </div>
+            </section>
         </div>
     }
 }
