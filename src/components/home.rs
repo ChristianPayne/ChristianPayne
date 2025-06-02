@@ -20,51 +20,45 @@ struct TimelineItem {
 pub fn Home() -> impl IntoView {
     let timeline_items = vec![
         TimelineItem {
-            year: "Present".to_string(),
-            title: "AWS Developer at Model Match".to_string(),
-            description: "Full-stack development with AWS infrastructure, building scalable SaaS solutions".to_string(),
-            event_type: EventType::CareerMilestone,
-        },
-        TimelineItem {
-            year: "2024".to_string(),
+            year: "2023 - Present".to_string(),
             title: "Ennesults".to_string(),
             description: "Rust/Tauri desktop app for Twitch chat interactions with real-time IRC integration".to_string(),
             event_type: EventType::ProjectMilestone,
         },
         TimelineItem {
             year: "2023".to_string(),
-            title: "Permission System".to_string(),
+            title: "Permission System - Model Match".to_string(),
             description: "Flagship scalable, role-based permission architecture integrated with payment system".to_string(),
             event_type: EventType::ProjectMilestone,
         },
         TimelineItem {
             year: "2022".to_string(),
-            title: "Chrome Extension Rebuild".to_string(),
-            description: "React-based extension for streamlined contact imports with improved performance".to_string(),
+            title: "Chrome Extension - Model Match".to_string(),
+            description: "React-based extension for streamlined contact imports straight into the CRM.".to_string(),
             event_type: EventType::ProjectMilestone,
         },
         TimelineItem {
             year: "2022".to_string(),
             title: "The Event Community".to_string(),
-            description: "Full-stack business platform with React, Node, Firebase and custom user profiles".to_string(),
+            description: "Full-stack business platform with Remix, Node, and Firebase.".to_string(),
             event_type: EventType::ProjectMilestone,
         },
         TimelineItem {
             year: "2021".to_string(),
-            title: "CRM Features & Custom Fields".to_string(),
+            title: "CRM Features & Custom Fields - Model Match".to_string(),
             description: "Core application features including metadata system and improved import tools".to_string(),
             event_type: EventType::ProjectMilestone,
         },
         TimelineItem {
-            year: "2021".to_string(),
+            year: "2021 - Present".to_string(),
             title: "Started at Model Match".to_string(),
-            description: "Joined as AWS Developer focusing on mortgage recruiting SaaS platform".to_string(),
+            description: "AWS Developer role focusing on mortgage recruiting SaaS platform.".to_string(),
             event_type: EventType::CareerMilestone,
         },
         TimelineItem {
             year: "2020-2021".to_string(),
             title: "UC Irvine Coding Bootcamp".to_string(),
-            description: "Intensive program covering React, Node, Express, MongoDB, and modern web technologies".to_string(),
+            description: "Intensive full stack development program covering React, Node, Express, MongoDB, and modern web technologies".to_string(),
             event_type: EventType::CareerMilestone,
         },
         TimelineItem {
@@ -114,7 +108,7 @@ pub fn Home() -> impl IntoView {
                             "I got into programming back in 2016 when working on apps for auto shows then I got hooked on the satisfaction of building something from scratch that actually solves real problems. These days, I'm working with Rust a lot, which feels like the perfect fit for someone who obsesses over the details."
                         </p>
                         <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
-                            "Working for Model Match here in Southern California, I get to work on some really interesting challenges—from building robust permission systems that manage features for variable user roles, to creating developer CLI tools that make everyone's job easier. I've also built browser extensions and various internal tools that streamline our workflows."
+                            "Working for Model Match here in Southern California, I get to work on some really interesting challenges—from building robust permission systems that manage features for user roles, to creating developer CLI tools that make everyone's job easier. I've also built a browser extension and various ETL jobs that keep our data clean and up to date."
                         </p>
                         <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
                             "I'm the kind of person who will spend a good amount of time up front to think about the best way to solve a problem. My teammates probably think I'm a bit obsessive about code quality, but I'd rather build something solid once than patch it forever."
@@ -127,7 +121,7 @@ pub fn Home() -> impl IntoView {
                 // Signal-based timeline implementation
                 <div class="py-20">
                     <div class="max-w-4xl mx-auto">
-                        <h2 class="text-4xl font-bold text-center mb-12">"Professional Timeline"</h2>
+                        <h2 class="text-4xl font-bold text-center mb-12">"Projects and Career Milestones"</h2>
                         <div class="rounded-xl p-8 border bg-white shadow-sm">
                             <div class="relative">
                                 // Timeline line - left side on mobile, centered on desktop
