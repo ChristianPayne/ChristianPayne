@@ -88,7 +88,11 @@ pub fn App() -> impl IntoView {
                                         "Case Studies"
                                     </Button>
                                 </Link>
-                                <Link href="https://christianpayne.substack.com">
+                                <a
+                                    href="https://christianpayne.substack.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
                                     <Button
                                         appearance=ButtonAppearance::Transparent
                                         class="inline-flex items-center"
@@ -108,7 +112,7 @@ pub fn App() -> impl IntoView {
                                             ></path>
                                         </svg>
                                     </Button>
-                                </Link>
+                                </a>
                             </div>
                         </div>
                     </LayoutHeader>

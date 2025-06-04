@@ -24,7 +24,7 @@ pub fn CaseStudies() -> impl IntoView {
         },
         CaseStudy {
             title: "Permission System".to_string(),
-            description: "A comprehensive role-based access control (RBAC) system implementation, featuring granular permissions, role management, and secure authentication. This system provides flexible and scalable access control for modern applications.".to_string(),
+            description: "A comprehensive role-based access control system implementation, featuring granular permissions, role management, and secure authentication. This system provides flexible and scalable access control for modern applications.".to_string(),
             image_path: "images/example-permissions.jpg".to_string(),
             slug: "permission-system".to_string(),
             technologies: vec!["TypeScript".to_string(), "GraphQL".to_string(), "AppSync".to_string()],
