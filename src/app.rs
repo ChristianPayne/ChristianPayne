@@ -2,33 +2,109 @@ use crate::components::{CaseStudies, EnnesultsCaseStudy, Home};
 use leptos::prelude::*;
 use leptos_router::components::{Route, Router, Routes};
 use leptos_router::path;
+use std::collections::HashMap;
 use thaw::*;
 
 #[component]
 pub fn App() -> impl IntoView {
+    let brand_colors = RwSignal::new(HashMap::from([
+        (10, "#060201"),
+        (20, "#23120B"),
+        (30, "#3C1C12"),
+        (40, "#512316"),
+        (50, "#662A1A"),
+        (60, "#7C311E"),
+        (70, "#933822"),
+        (80, "#AB3F26"),
+        (90, "#C34629"),
+        (100, "#DB4D2D"),
+        (110, "#F45431"),
+        (120, "#FF6A45"),
+        (130, "#FF8665"),
+        (140, "#FF9F82"),
+        (150, "#FFB59F"),
+        (160, "#FFCABE"),
+    ]));
+
+    let theme = RwSignal::new(Theme::custom_light(&brand_colors.get()));
+
+    // Add state for mobile menu
+    let (is_mobile_menu_open, set_mobile_menu_open) = signal(false);
+
     view! {
-        <ConfigProvider>
+        <ConfigProvider theme>
             <Router>
-                <Layout>
-                    <LayoutHeader class="p-4">
+                <Layout class="background-grid">
+                    <LayoutHeader class="p-4 bg-white">
                         <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
-                            <div class="flex justify-center md:justify-start">
+                            <div class="flex justify-between items-center">
                                 <Link href="/">
                                     <Button appearance=ButtonAppearance::Transparent>
                                         <h1 class="text-2xl font-medium">Christian Payne</h1>
                                     </Button>
                                 </Link>
+
+                                // Add hamburger button for mobile
+                                <Button
+                                    appearance=ButtonAppearance::Transparent
+                                    class="md:hidden"
+                                    on:click=move |_| set_mobile_menu_open.update(|v| *v = !*v)
+                                >
+                                    <svg
+                                        class="w-6 h-6"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M4 6h16M4 12h16M4 18h16"
+                                        ></path>
+                                    </svg>
+                                </Button>
                             </div>
 
-                            <div class="flex flex-wrap gap-4 justify-center md:justify-end">
+                            // Wrap navigation in mobile menu
+                            <div class=move || {
+                                let base_classes = "flex flex-col md:flex-row gap-4";
+                                let mobile_classes = if is_mobile_menu_open.get() {
+                                    "md:flex"
+                                } else {
+                                    "hidden md:flex"
+                                };
+                                format!("{} {}", base_classes, mobile_classes)
+                            }>
                                 <Link href="/case-studies">
-                                    <Button appearance=ButtonAppearance::Transparent>
+                                    <Button
+                                        appearance=ButtonAppearance::Transparent
+                                        on_click=move |_| {
+                                            set_mobile_menu_open.update(|v| *v = false)
+                                        }
+                                    >
                                         "Case Studies"
                                     </Button>
                                 </Link>
                                 <Link href="https://christianpayne.substack.com">
-                                    <Button appearance=ButtonAppearance::Transparent>
+                                    <Button
+                                        appearance=ButtonAppearance::Transparent
+                                        class="inline-flex items-center"
+                                    >
                                         "Latent Space"
+                                        <svg
+                                            class="ml-1 w-4 h-4"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                                            ></path>
+                                        </svg>
                                     </Button>
                                 </Link>
                             </div>

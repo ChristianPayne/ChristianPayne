@@ -228,29 +228,64 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
     });
 
     view! {
-        <div class="min-h-screen" style="background-color: #fafafa; background-image: radial-gradient(circle, rgba(0,0,0,.15) 1px, transparent 1px); background-size: 20px 20px;">
+        <div class="min-h-screen">
             // Hero Section
             <div class="relative overflow-hidden">
                 <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
                     <div class="text-center">
                         <h1 class="text-5xl md:text-7xl font-bold mb-2">"Ennesults"</h1>
                         <p class="text-lg text-gray-600 mb-6">
-                            {move || repo_data.get().as_ref().map(|r| r.name.clone()).unwrap_or_else(|| "ennesults-rs".to_string())}
+                            {move || {
+                                repo_data
+                                    .get()
+                                    .as_ref()
+                                    .map(|r| r.name.clone())
+                                    .unwrap_or_else(|| "ennesults-rs".to_string())
+                            }}
                         </p>
                         <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-                            {move || repo_data.get().as_ref().and_then(|r| r.description.clone()).unwrap_or_else(|| "A Tauri/Rust Twitch bot that kindly insults people in chat".to_string())}
+                            {move || {
+                                repo_data
+                                    .get()
+                                    .as_ref()
+                                    .and_then(|r| r.description.clone())
+                                    .unwrap_or_else(|| {
+                                        "A Tauri/Rust Twitch bot that kindly insults people in chat"
+                                            .to_string()
+                                    })
+                            }}
                         </p>
                         <div class="flex flex-wrap justify-center gap-4 mb-8">
                             <span class="px-4 py-2 rounded-full border bg-white shadow-sm">
-                                {move || repo_data.get().as_ref().and_then(|r| r.language.clone()).unwrap_or_else(|| "Rust".to_string())}
+                                {move || {
+                                    repo_data
+                                        .get()
+                                        .as_ref()
+                                        .and_then(|r| r.language.clone())
+                                        .unwrap_or_else(|| "Rust".to_string())
+                                }}
                             </span>
-                            <span class="px-4 py-2 rounded-full border bg-white shadow-sm">"Tauri"</span>
-                            <span class="px-4 py-2 rounded-full border bg-white shadow-sm">"SvelteKit"</span>
-                            <span class="px-4 py-2 rounded-full border bg-white shadow-sm">"Twitch IRC"</span>
+                            <span class="px-4 py-2 rounded-full border bg-white shadow-sm">
+                                "Tauri"
+                            </span>
+                            <span class="px-4 py-2 rounded-full border bg-white shadow-sm">
+                                "SvelteKit"
+                            </span>
+                            <span class="px-4 py-2 rounded-full border bg-white shadow-sm">
+                                "Twitch IRC"
+                            </span>
                         </div>
                         <div class="flex justify-center gap-6">
                             <a
-                                href={move || repo_data.get().as_ref().map(|r| r.html_url.clone()).unwrap_or_else(|| "https://github.com/ChristianPayne/ennesults-rs".to_string())}
+                                href=move || {
+                                    repo_data
+                                        .get()
+                                        .as_ref()
+                                        .map(|r| r.html_url.clone())
+                                        .unwrap_or_else(|| {
+                                            "https://github.com/ChristianPayne/ennesults-rs".to_string()
+                                        })
+                                }
                                 target="_blank"
                                 class="inline-flex items-center px-6 py-3 rounded-lg transition-colors border bg-white shadow-sm hover:bg-gray-50"
                             >
@@ -282,13 +317,24 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                             <div class="grid grid-cols-2 gap-6">
                                 <div class="rounded-lg p-4 border bg-white shadow-sm">
                                     <h3 class="font-semibold mb-2">
-                                        {move || total_releases.get().map(|r| format!("{} Releases", r)).unwrap_or_else(|| "Loading...".to_string())}
+                                        {move || {
+                                            total_releases
+                                                .get()
+                                                .map(|r| format!("{} Releases", r))
+                                                .unwrap_or_else(|| "Loading...".to_string())
+                                        }}
                                     </h3>
                                     <p class="text-sm">"Stable iterations"</p>
                                 </div>
                                 <div class="rounded-lg p-4 border bg-white shadow-sm">
                                     <h3 class="font-semibold mb-2">
-                                        {move || latest_release.get().as_ref().map(|r| r.tag_name.clone()).unwrap_or_else(|| "Loading...".to_string())}
+                                        {move || {
+                                            latest_release
+                                                .get()
+                                                .as_ref()
+                                                .map(|r| r.tag_name.clone())
+                                                .unwrap_or_else(|| "Loading...".to_string())
+                                        }}
                                     </h3>
                                     <p class="text-sm">"Latest version"</p>
                                 </div>
@@ -446,7 +492,7 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                             <div class="absolute left-8 top-0 bottom-0 w-0.5 border-l"></div>
                             <div class="space-y-12">
                                 <div class="relative flex items-start">
-                                    <div class="absolute left-6 w-4 h-4 rounded-full border-4 bg-white"></div>
+                                    <div class="absolute left-6 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-4 bg-white"></div>
                                     <div class="ml-16 rounded-lg p-6 border bg-white shadow-sm">
                                         <h3 class="text-xl font-bold mb-2">"Project Inception"</h3>
                                         <p>
@@ -455,7 +501,7 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                                     </div>
                                 </div>
                                 <div class="relative flex items-start">
-                                    <div class="absolute left-6 w-4 h-4 rounded-full border-4 bg-white"></div>
+                                    <div class="absolute left-6 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-4 bg-white"></div>
                                     <div class="ml-16 rounded-lg p-6 border bg-white shadow-sm">
                                         <h3 class="text-xl font-bold mb-2">
                                             "Architecture Design"
@@ -466,7 +512,7 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                                     </div>
                                 </div>
                                 <div class="relative flex items-start">
-                                    <div class="absolute left-6 w-4 h-4 rounded-full border-4 bg-white"></div>
+                                    <div class="absolute left-6 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-4 bg-white"></div>
                                     <div class="ml-16 rounded-lg p-6 border bg-white shadow-sm">
                                         <h3 class="text-xl font-bold mb-2">"IRC Integration"</h3>
                                         <p>
@@ -475,7 +521,7 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                                     </div>
                                 </div>
                                 <div class="relative flex items-start">
-                                    <div class="absolute left-6 w-4 h-4 rounded-full border-4 bg-white"></div>
+                                    <div class="absolute left-6 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-4 bg-white"></div>
                                     <div class="ml-16 rounded-lg p-6 border bg-white shadow-sm">
                                         <h3 class="text-xl font-bold mb-2">
                                             "User Experience Focus"
@@ -486,9 +532,11 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                                     </div>
                                 </div>
                                 <div class="relative flex items-start">
-                                    <div class="absolute left-6 w-4 h-4 rounded-full border-4 bg-white"></div>
+                                    <div class="absolute left-6 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-4 bg-white"></div>
                                     <div class="ml-16 rounded-lg p-6 border bg-white shadow-sm">
-                                        <h3 class="text-xl font-bold mb-2">"Ongoing Collaboration"</h3>
+                                        <h3 class="text-xl font-bold mb-2">
+                                            "Ongoing Collaboration"
+                                        </h3>
                                         <p>
                                             "This project continues to evolve through collaboration with Enne and the streaming community. Regular feedback sessions drive new feature development, from command customization to UI improvements. The modular architecture enables rapid iteration and experimentation with new ideas."
                                         </p>
