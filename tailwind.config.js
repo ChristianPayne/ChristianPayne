@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{html,rs}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Space Grotesk', 'Roboto', 'system-ui', 'sans-serif'],
+      },
       colors: {
         'highlight': {
           DEFAULT: "#FF5733",

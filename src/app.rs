@@ -1,4 +1,6 @@
-use crate::components::{CaseStudies, EnnesultsCaseStudy, Home};
+use crate::components::{
+    CaseStudies, EnnesultsCaseStudy, Home, PermissionSystemCaseStudy, WebsiteCaseStudy,
+};
 use leptos::prelude::*;
 use leptos_router::components::{Route, Router, Routes};
 use leptos_router::path;
@@ -34,13 +36,13 @@ pub fn App() -> impl IntoView {
     view! {
         <ConfigProvider theme>
             <Router>
-                <Layout class="background-grid">
+                <Layout class="background-grid font-sans">
                     <LayoutHeader class="p-4 bg-white">
                         <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
                             <div class="flex justify-between items-center">
                                 <Link href="/">
                                     <Button appearance=ButtonAppearance::Transparent>
-                                        <h1 class="text-2xl font-medium">Christian Payne</h1>
+                                        <h1 class="text-2xl">Christian Payne</h1>
                                     </Button>
                                 </Link>
 
@@ -117,6 +119,11 @@ pub fn App() -> impl IntoView {
                             <Route path=path!("/") view=Home />
                             <Route path=path!("/case-studies") view=CaseStudies />
                             <Route path=path!("/case-studies/ennesults") view=EnnesultsCaseStudy />
+                            <Route
+                                path=path!("/case-studies/permission-system")
+                                view=PermissionSystemCaseStudy
+                            />
+                            <Route path=path!("/case-studies/website") view=WebsiteCaseStudy />
                         </Routes>
                     </Layout>
                 </Layout>

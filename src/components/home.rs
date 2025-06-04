@@ -328,7 +328,7 @@ pub fn Home() -> impl IntoView {
                                         "TailwindCSS"
                                     </span>
                                 </div>
-                                <Link href="/case-studies/portfolio">
+                                <Link href="/case-studies/website">
                                     <div class="inline-flex items-center text-black font-medium group-hover:text-highlight-100 transition-colors">
                                         "View Case Study"
                                         <svg
