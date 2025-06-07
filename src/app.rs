@@ -1,5 +1,6 @@
 use crate::components::{
-    CaseStudies, EnnesultsCaseStudy, Home, PermissionSystemCaseStudy, WebsiteCaseStudy,
+    CaseStudies, EnnesultsCaseStudy, Home, ObsScheduledRecordingsCaseStudy,
+    PermissionSystemCaseStudy, WebsiteCaseStudy,
 };
 use leptos::prelude::*;
 use leptos_router::components::{Route, Router, Routes};
@@ -37,7 +38,7 @@ pub fn App() -> impl IntoView {
         <ConfigProvider theme>
             <Router>
                 <Layout class="background-grid font-sans">
-                    <LayoutHeader class="p-4 bg-white">
+                    <LayoutHeader class="p-4 bg-white relative">
                         <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
                             <div class="flex justify-between items-center">
                                 <Link href="/">
@@ -68,51 +69,54 @@ pub fn App() -> impl IntoView {
                                 </Button>
                             </div>
 
-                            // Wrap navigation in mobile menu
+                            // Mobile menu container with transitions
                             <div class=move || {
-                                let base_classes = "flex flex-col md:flex-row gap-4";
+                                let base_classes = "absolute md:relative left-0 right-0 top-full bg-white md:shadow-none shadow-lg transition-all duration-300 ease-in-out z-50";
                                 let mobile_classes = if is_mobile_menu_open.get() {
-                                    "md:flex"
+                                    "opacity-100 translate-y-0 md:translate-y-0"
                                 } else {
-                                    "hidden md:flex"
+                                    "opacity-0 -translate-y-4 pointer-events-none md:opacity-100 md:translate-y-0 md:pointer-events-auto"
                                 };
                                 format!("{} {}", base_classes, mobile_classes)
                             }>
-                                <Link href="/case-studies">
-                                    <Button
-                                        appearance=ButtonAppearance::Transparent
-                                        on_click=move |_| {
-                                            set_mobile_menu_open.update(|v| *v = false)
-                                        }
-                                    >
-                                        "Case Studies"
-                                    </Button>
-                                </Link>
-                                <a
-                                    href="https://christianpayne.substack.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <Button
-                                        appearance=ButtonAppearance::Transparent
-                                        class="inline-flex items-center"
-                                    >
-                                        "Latent Space"
-                                        <svg
-                                            class="ml-1 w-4 h-4"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
+                                // Navigation items
+                                <div class="flex flex-col md:flex-row gap-4 p-4 md:p-0">
+                                    <Link href="/case-studies">
+                                        <Button
+                                            appearance=ButtonAppearance::Transparent
+                                            on_click=move |_| {
+                                                set_mobile_menu_open.update(|v| *v = false)
+                                            }
                                         >
-                                            <path
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                stroke-width="2"
-                                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                                            ></path>
-                                        </svg>
-                                    </Button>
-                                </a>
+                                            "Case Studies"
+                                        </Button>
+                                    </Link>
+                                    <a
+                                        href="https://christianpayne.substack.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <Button
+                                            appearance=ButtonAppearance::Transparent
+                                            class="inline-flex items-center"
+                                        >
+                                            "Latent Space"
+                                            <svg
+                                                class="ml-1 w-4 h-4"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                                                ></path>
+                                            </svg>
+                                        </Button>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </LayoutHeader>
@@ -128,6 +132,10 @@ pub fn App() -> impl IntoView {
                                 view=PermissionSystemCaseStudy
                             />
                             <Route path=path!("/case-studies/website") view=WebsiteCaseStudy />
+                            <Route
+                                path=path!("/case-studies/obs-scheduled-recordings")
+                                view=ObsScheduledRecordingsCaseStudy
+                            />
                         </Routes>
                     </Layout>
                 </Layout>

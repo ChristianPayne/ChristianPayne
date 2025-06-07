@@ -15,6 +15,14 @@ pub struct CaseStudy {
 pub fn CaseStudies() -> impl IntoView {
     let case_studies = vec![
         CaseStudy {
+            title: "OBS Scheduled Recordings".to_string(),
+            description: "A CLI tool for automating OBS recordings with precise timing control. Built with Rust, it connects to OBS WebSocket to schedule and manage recording sessions with millisecond accuracy.".to_string(),
+            image_path: "images/example-obs.jpg".to_string(),
+            slug: "obs-scheduled-recordings".to_string(),
+            technologies: vec!["Rust".to_string(), "OBS WebSocket".to_string(), "CLI".to_string()],
+            github_url: Some("https://github.com/ChristianPayne/obs-scheduled-recordings".to_string()),
+        },
+        CaseStudy {
             title: "Ennesults - Twitch Chat Bot".to_string(),
             description: "A sophisticated Twitch chat bot built with Rust and Tauri, originally created for streamer Ennegineer. This desktop application features chat integration, native desktop performance, and type-safe architecture with automatic updates.".to_string(),
             image_path: "images/example-twitch.jpg".to_string(),
