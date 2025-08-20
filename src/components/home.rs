@@ -6,6 +6,7 @@ use thaw::*;
 enum EventType {
     CareerMilestone,
     ProjectMilestone,
+    EducationMilestone,
 }
 
 #[derive(Clone)]
@@ -20,7 +21,7 @@ struct TimelineItem {
 pub fn Home() -> impl IntoView {
     let timeline_items = vec![
         TimelineItem {
-            year: "2023 - Ongoing".to_string(),
+            year: "Ongoing".to_string(),
             title: "Ennesults".to_string(),
             description: "Rust/Tauri desktop app for Twitch chat interactions with real-time IRC integration.".to_string(),
             event_type: EventType::ProjectMilestone,
@@ -59,7 +60,7 @@ pub fn Home() -> impl IntoView {
             year: "2020-2021".to_string(),
             title: "UC Irvine Coding Bootcamp".to_string(),
             description: "Intensive full stack development program covering React, Node, Express, MongoDB, and modern web technologies.".to_string(),
-            event_type: EventType::CareerMilestone,
+            event_type: EventType::EducationMilestone,
         },
         TimelineItem {
             year: "2019-2020".to_string(),
@@ -105,7 +106,7 @@ pub fn Home() -> impl IntoView {
                             "Hey there! I'm a developer who gets genuinely excited about making things work better."
                         </p>
                         <p class="text-lg md:text-xl text-gray-700 mb-4">
-                            "My journey in tech started in 2016 with interactive auto show applications, and I've been hooked ever since. These days, I'm doing full stack work on AWS at Model Match, where I focus on building robust systems, CRM features, data jobs, and developer tools that make everyone's job easier."
+                            "My journey in tech started in 2016 with interactive auto show applications, and I've been a self starter ever since. These days, I'm doing full stack work on AWS at Model Match, where I focus on building robust systems, CRM features, data jobs, and developer tools that make everyone's job easier."
                         </p>
                         <p class="text-lg md:text-xl text-gray-700 mb-4">
                             "I'm passionate about code quality and thoughtful architecture. Working with Rust has reinforced my belief in taking the time to solve problems the right way, even if it means spending more time upfront. Building strong foundations with type safety and performance in mind is key to long-term success."
@@ -168,6 +169,13 @@ pub fn Home() -> impl IntoView {
                                                                             </span>
                                                                         }
                                                                     }
+                                                                    EventType::EducationMilestone => {
+                                                                        view! {
+                                                                            <span class="text-sm text-gray-500">
+                                                                                "Education Milestone"
+                                                                            </span>
+                                                                        }
+                                                                    }
                                                                 }}
                                                             </div>
                                                         </div>
@@ -202,6 +210,13 @@ pub fn Home() -> impl IntoView {
                                                                             </span>
                                                                         }
                                                                     }
+                                                                    EventType::EducationMilestone => {
+                                                                        view! {
+                                                                            <span class="text-sm text-gray-500">
+                                                                                "Education Milestone"
+                                                                            </span>
+                                                                        }
+                                                                    }
                                                                 }}
                                                             </div>
                                                         </div>
@@ -222,6 +237,9 @@ pub fn Home() -> impl IntoView {
                                                                 "absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-highlight-100"
                                                             }
                                                             EventType::ProjectMilestone => {
+                                                                "absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 border-highlight-100"
+                                                            }
+                                                            EventType::EducationMilestone => {
                                                                 "absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 border-highlight-100"
                                                             }
                                                         }
@@ -377,7 +395,7 @@ pub fn Home() -> impl IntoView {
                                             "TypeScript"
                                         </span>
                                         <span class="px-3 py-1 text-sm rounded-full border bg-gray-50">
-                                            "GraphQL"
+                                            "DynamoDB"
                                         </span>
                                         <span class="px-3 py-1 text-sm rounded-full border bg-gray-50">
                                             "AppSync"
