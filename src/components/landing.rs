@@ -3,10 +3,10 @@ use leptos::prelude::*;
 use thaw::*;
 
 #[derive(Clone)]
-enum EventType {
-    CareerMilestone,
-    ProjectMilestone,
-    EducationMilestone,
+enum Event {
+    Career,
+    Project,
+    Education,
 }
 
 #[derive(Clone)]
@@ -14,77 +14,77 @@ struct TimelineItem {
     year: String,
     title: String,
     description: String,
-    event_type: EventType,
+    event_type: Event,
 }
 
 #[component]
-pub fn Home() -> impl IntoView {
+pub fn Landing() -> impl IntoView {
     let timeline_items = vec![
         TimelineItem {
             year: "Ongoing".to_string(),
             title: "Ennesults".to_string(),
             description: "Rust/Tauri desktop app for Twitch chat interactions with real-time IRC integration.".to_string(),
-            event_type: EventType::ProjectMilestone,
+            event_type: Event::Project,
         },
         TimelineItem {
             year: "2023".to_string(),
             title: "Permission System - Model Match".to_string(),
-            description: "Flagship scalable, role-based permission architecture integrated with payment system.".to_string(),
-            event_type: EventType::ProjectMilestone,
+            description: "Flagship scalable, role-based permission architecture to manage user access.".to_string(),
+            event_type: Event::Project,
         },
         TimelineItem {
             year: "2022".to_string(),
             title: "Chrome Extension - Model Match".to_string(),
             description: "React-based extension for streamlined contact imports straight into the CRM.".to_string(),
-            event_type: EventType::ProjectMilestone,
+            event_type: Event::Project,
         },
         TimelineItem {
             year: "2022".to_string(),
             title: "The Event Community".to_string(),
             description: "Full-stack business platform with Remix, Node, and Firebase.".to_string(),
-            event_type: EventType::ProjectMilestone,
+            event_type: Event::Project,
         },
         TimelineItem {
             year: "2021".to_string(),
             title: "CRM Features & Custom Fields - Model Match".to_string(),
             description: "Core application features including metadata system and improved import tools.".to_string(),
-            event_type: EventType::ProjectMilestone,
+            event_type: Event::Project,
         },
         TimelineItem {
             year: "2021 - Present".to_string(),
             title: "Started at Model Match".to_string(),
             description: "AWS Developer role focusing on mortgage recruiting SaaS platform.".to_string(),
-            event_type: EventType::CareerMilestone,
+            event_type: Event::Career,
         },
         TimelineItem {
             year: "2020-2021".to_string(),
             title: "UC Irvine Coding Bootcamp".to_string(),
             description: "Intensive full stack development program covering React, Node, Express, MongoDB, and modern web technologies.".to_string(),
-            event_type: EventType::EducationMilestone,
+            event_type: Event::Education,
         },
         TimelineItem {
             year: "2019-2020".to_string(),
             title: "Self Employed".to_string(),
             description: "Interactive developer creating custom experiences and maintaining client projects.".to_string(),
-            event_type: EventType::CareerMilestone,
+            event_type: Event::Career,
         },
         TimelineItem {
             year: "2016-2020".to_string(),
             title: "Genesis/Hyundai Wheelstands".to_string(),
             description: "Unity3D applications for auto shows featuring interactive car displays nationwide.".to_string(),
-            event_type: EventType::ProjectMilestone,
+            event_type: Event::Project,
         },
         TimelineItem {
             year: "2016".to_string(),
             title: "Programming Journey Began".to_string(),
             description: "First coding experiences building interactive auto show applications.".to_string(),
-            event_type: EventType::ProjectMilestone,
+            event_type: Event::Project,
         },
         TimelineItem {
             year: "2013-2019".to_string(),
             title: "Related Grey".to_string(),
             description: "Multi-role position: Interactive Developer, 2D/3D Designer, and IT Technician.".to_string(),
-            event_type: EventType::CareerMilestone,
+            event_type: Event::Career,
         },
     ];
 
@@ -101,15 +101,18 @@ pub fn Home() -> impl IntoView {
                     </div>
 
                     <div class="flex-1">
-                        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">About Me</h2>
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                            Full Stack / Rust Developer
+                        </h2>
                         <p class="text-lg md:text-xl text-gray-700 mb-4">
-                            "Hey there! I'm a developer who gets genuinely excited about making things work better."
+                            "My journey in tech started in 2016 with interactive auto show applications, and I've been a self starter ever since. These days, I'm doing full stack work on AWS at "
+                            <span class="underline">"Model Match"</span> ", where I focus on "
+                            <span class="underline">
+                                "building robust systems, CRM features, data jobs, and developer tools"
+                            </span> " that make everyone's job easier."
                         </p>
                         <p class="text-lg md:text-xl text-gray-700 mb-4">
-                            "My journey in tech started in 2016 with interactive auto show applications, and I've been a self starter ever since. These days, I'm doing full stack work on AWS at Model Match, where I focus on building robust systems, CRM features, data jobs, and developer tools that make everyone's job easier."
-                        </p>
-                        <p class="text-lg md:text-xl text-gray-700 mb-4">
-                            "I'm passionate about code quality and thoughtful architecture. Working with Rust has reinforced my belief in taking the time to solve problems the right way, even if it means spending more time upfront. Building strong foundations with type safety and performance in mind is key to long-term success."
+                            "I'm passionate about code quality and thoughtful architecture. Working with Rust has reinforced my belief in taking the time to solve problems the right way. Building strong foundations with type safety and performance in mind is key to long-term success."
                         </p>
                     </div>
                 </div>
@@ -155,21 +158,21 @@ pub fn Home() -> impl IntoView {
                                                                     {description.clone()}
                                                                 </p>
                                                                 {match &event_type {
-                                                                    EventType::CareerMilestone => {
+                                                                    Event::Career => {
                                                                         view! {
                                                                             <span class="text-sm text-highlight-100">
                                                                                 "Career Milestone"
                                                                             </span>
                                                                         }
                                                                     }
-                                                                    EventType::ProjectMilestone => {
+                                                                    Event::Project => {
                                                                         view! {
                                                                             <span class="text-sm text-gray-500">
                                                                                 "Project Milestone"
                                                                             </span>
                                                                         }
                                                                     }
-                                                                    EventType::EducationMilestone => {
+                                                                    Event::Education => {
                                                                         view! {
                                                                             <span class="text-sm text-gray-500">
                                                                                 "Education Milestone"
@@ -186,7 +189,7 @@ pub fn Home() -> impl IntoView {
                                                 Either::Left(
 
                                                     view! {
-                                                        <div class="w-full md:w-1/2 md:pl-8 pl-8 text-left mt-4 md:mt-0">
+                                                        <div class="w-full md:w-1/2 md:pl-8 pl-8 text-left mb-4 md:mb-0">
                                                             <div class="flex flex-col">
                                                                 <span class="text-sm font-medium text-gray-500 mb-1">
                                                                     {year}
@@ -196,21 +199,21 @@ pub fn Home() -> impl IntoView {
                                                                 </h3>
                                                                 <p class="text-sm text-gray-600 mb-2">{description}</p>
                                                                 {match &event_type {
-                                                                    EventType::CareerMilestone => {
+                                                                    Event::Career => {
                                                                         view! {
                                                                             <span class="text-sm text-highlight-100">
                                                                                 "Career Milestone"
                                                                             </span>
                                                                         }
                                                                     }
-                                                                    EventType::ProjectMilestone => {
+                                                                    Event::Project => {
                                                                         view! {
                                                                             <span class="text-sm text-gray-500">
                                                                                 "Project Milestone"
                                                                             </span>
                                                                         }
                                                                     }
-                                                                    EventType::EducationMilestone => {
+                                                                    Event::Education => {
                                                                         view! {
                                                                             <span class="text-sm text-gray-500">
                                                                                 "Education Milestone"
@@ -233,14 +236,14 @@ pub fn Home() -> impl IntoView {
                                                     {left_content}
                                                     <div class=move || {
                                                         match &event_type {
-                                                            EventType::CareerMilestone => {
-                                                                "absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-highlight-100"
+                                                            Event::Career => {
+                                                                "absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-highlight-100 top-0 md:top-1/2 md:-translate-y-1/2"
                                                             }
-                                                            EventType::ProjectMilestone => {
-                                                                "absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 border-highlight-100"
+                                                            Event::Project => {
+                                                                "absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 border-highlight-100 top-0 md:top-1/2 md:-translate-y-1/2"
                                                             }
-                                                            EventType::EducationMilestone => {
-                                                                "absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 border-highlight-100"
+                                                            Event::Education => {
+                                                                "absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 border-highlight-100 top-0 md:top-1/2 md:-translate-y-1/2"
                                                             }
                                                         }
                                                     }></div> {right_content}
@@ -388,7 +391,7 @@ pub fn Home() -> impl IntoView {
                                     </div>
                                     <h3 class="text-xl font-bold mb-3">"Permission System"</h3>
                                     <p class="text-gray-600 mb-4">
-                                        "A scalable role-based permission architecture that manages feature access and integrates with payment systems, built for high-performance and maintainability."
+                                        "A scalable role-based permission architecture that manages feature access."
                                     </p>
                                     <div class="flex flex-wrap gap-2 mb-4">
                                         <span class="px-3 py-1 text-sm rounded-full border bg-gray-50">

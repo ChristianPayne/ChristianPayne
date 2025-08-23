@@ -1,5 +1,5 @@
 use crate::components::{
-    CaseStudies, EnnesultsCaseStudy, Home, ObsScheduledRecordingsCaseStudy,
+    CaseStudies, EnnesultsCaseStudy, Landing, ObsScheduledRecordingsCaseStudy,
     PermissionSystemCaseStudy, WebsiteCaseStudy,
 };
 use leptos::prelude::*;
@@ -145,7 +145,7 @@ pub fn App() -> impl IntoView {
 
                     <Layout class="px-4">
                         <Routes fallback=|| view! { <div>"Not Found"</div> }>
-                            <Route path=path!("/") view=Home />
+                            <Route path=path!("/") view=Landing />
                             <Route path=path!("/case-studies") view=CaseStudies />
                             <Route path=path!("/case-studies/ennesults") view=EnnesultsCaseStudy />
                             <Route

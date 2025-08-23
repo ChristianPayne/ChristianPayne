@@ -12,7 +12,7 @@ pub fn PermissionSystemCaseStudy() -> impl IntoView {
                         <h1 class="text-5xl md:text-7xl font-bold mb-2">"Permission System"</h1>
                         <p class="text-lg text-gray-600 mb-6">"Model Match"</p>
                         <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-                            "NEEDS REVIEW: A comprehensive role-based access control system implementation, featuring granular permissions, role management, and realtime updates."
+                            "A scalable permission management solution for Model Match that combines role-based access control, granular permissions, and real-time updates to provide precise control over user capabilities."
                         </p>
                         <div class="flex flex-wrap justify-center gap-4 mb-8">
                             <span class="px-4 py-2 rounded-full border bg-white shadow-sm">
@@ -36,10 +36,7 @@ pub fn PermissionSystemCaseStudy() -> impl IntoView {
                         <div class="space-y-6">
                             <h2 class="text-4xl font-bold mb-6">"Project Overview"</h2>
                             <p class="text-lg">
-                                "NEEDS REVIEW: Developed as a core component of Model Match, this permission system was created to handle the complex access control needs of a multi-tenant platform. It enables precise control over who can access what features, ensuring that each user has exactly the permissions they need while maintaining security and flexibility. All changes are applied instantly, with no need for users to refresh or restart their sessions."
-                            </p>
-                            <p class="text-lg">
-                                "NEEDS REVIEW: At its core, the system provides a flexible way to manage user access through roles. Every user starts with basic permissions, while administrators have full control over the platform. This structure allows Model Match to easily manage access for different types of users, from basic users to power users and administrators."
+                                "Developed as a core component of Model Match, this permission system was created to handle the complex access control needs of a multi-tenant platform. The initial system was too restrictive, applying the same access levels to all users within a tenant. This new system provides user-level control while maintaining the multi-tenant structure, allowing different users to have different access levels. All changes are applied instantly, and the flexible role system handles access management for users at every level of the organization."
                             </p>
                         </div>
                     </div>
@@ -47,22 +44,22 @@ pub fn PermissionSystemCaseStudy() -> impl IntoView {
             </section>
 
             // History & Motivation
-            <section class="py-12 sm:py-20">
+            <section class="py-16 sm:py-24">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="max-w-4xl mx-auto">
                         <div class="space-y-6">
                             <h2 class="text-4xl font-bold mb-6">"History & Motivation"</h2>
                             <p class="text-lg">
-                                "NEEDS REVIEW: Model Match was built as a multi-tenant platform from the start, but the initial permission system was limited. Each tenant had their own set of permissions, but these permissions were applied uniformly across all users within that tenant. This meant that if a feature was enabled for a tenant, every user in that tenant had access to it."
+                                "As Model Match expanded beyond individual loan officers to serve entire mortgage companies and real estate teams, companies reached out with needs for different access levels. Loan officers needed to see agent data and Market Insights, while business development teams needed broader market intelligence. The existing permission system couldn't handle these industry-specific role distinctions."
                             </p>
                             <p class="text-lg">
-                                "NEEDS REVIEW: As our user base grew, we quickly realized that this tenant-wide approach was too restrictive. Different users within the same tenant needed different levels of access - some needed full access to all features, while others needed limited access to specific tools. The existing system couldn't accommodate these varying needs."
+                                "Beyond simple on/off switches, the team realized that many features needed granular configuration. Users might need access to Market Insights but with limited data fields, or agents might not want access to loan data. The existing system couldn't handle these nuanced permission requirements."
                             </p>
                             <p class="text-lg">
-                                "NEEDS REVIEW: The new permission system was developed to solve this problem. It maintains the multi-tenant structure while adding the flexibility to manage permissions at the user level. This allows tenants to have different types of users with different access levels, making the platform more versatile and secure."
+                                "Additionally, some companies didn't want to pay for all the data features, so the team needed to section them off with their own sub-feature flags. The new permission system could control access to specific data sets, Market Insights, and tools, allowing organizations to build the right access levels for their team structure and budget."
                             </p>
                             <p class="text-lg">
-                                "NEEDS REVIEW: Beyond user-level control, the system also enables fine-grained feature management. Instead of simply enabling or disabling entire sections, it can control specific behaviors and subsets within larger features. This means tenants can customize exactly how each feature works for different users, providing unprecedented flexibility in how the platform can be used. All these changes are applied in realtime, ensuring that users immediately see the effects of permission updates."
+                                "This led to a redesign focused on mortgage industry workflows. The new system could handle the complex permission needs of mortgage companies, from individual loan officers to enterprise teams, while maintaining the platform's core value proposition and enabling flexible pricing tiers."
                             </p>
                         </div>
                     </div>
@@ -70,9 +67,21 @@ pub fn PermissionSystemCaseStudy() -> impl IntoView {
             </section>
 
             // Technical Architecture
-            <section class="py-12 sm:py-20">
+            <section class="py-16 sm:py-24">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 class="text-4xl font-bold text-center mb-12">"Technical Architecture"</h2>
+                    <h2 class="text-4xl font-bold text-center mb-16">"Technical Architecture"</h2>
+                    <div class="max-w-4xl mx-auto mb-12">
+                        <p class="text-lg text-center">
+                            "Understanding how the permission system works requires diving into its technical architecture. Here we'll explore the building blocks and see how they come together in the management interface."
+                        </p>
+                    </div>
+                    <div class="max-w-4xl mx-auto">
+                        <img
+                            src="/images/permissions.png"
+                            alt="Model Match permission management interface showing tenant access controls"
+                            class="w-full max-w-4xl rounded-lg shadow-lg object-cover"
+                        />
+                    </div>
                 </div>
             </section>
 
@@ -84,25 +93,57 @@ pub fn PermissionSystemCaseStudy() -> impl IntoView {
                             <div>
                                 <h3 class="text-2xl font-bold mb-4">"AWS Cognito Integration"</h3>
                                 <p class="text-lg">
-                                    "NEEDS REVIEW: The system integrates with AWS Cognito for enhanced security. When a user is assigned the Tenant Admin role, they are automatically added to the `tenantAdmin` AWS Cognito user group. This provides an additional layer of security at the application routing level, ensuring that sensitive company settings are protected by both the permission system and AWS Cognito's route guards."
+                                    <span>
+                                        "AWS Cognito provides backup protection for the permission system. When someone becomes a Tenant Admin, they're automatically added to the "
+                                    </span>
+                                    <code class="bg-gray-100 px-2 py-1 rounded text-sm">
+                                        "tenantAdmin"
+                                    </code>
+                                    <span>
+                                        " AWS Cognito group. This creates an additional safety layer at the routing level, ensuring that company settings are protected by both the permission system and AWS Cognito's route guards."
+                                    </span>
                                 </p>
                             </div>
                             <div>
-                                <h3 class="text-2xl font-bold mb-4">"Key Reducer System"</h3>
+                                <h3 class="text-2xl font-bold mb-4">"Value Access"</h3>
+                                <p class="text-lg mb-4">
+                                    <span>
+                                        "Permissions are organized in a tree structure, with each permission's location defined by a key reducer - an array of strings that represents an arbitrary location in the permission tree. This allows for precise targeting of permissions at any level, from broad feature access to specific actions within features. For example, a key reducer like "
+                                    </span>
+                                    <code class="bg-gray-100 px-2 py-1 rounded text-sm">
+                                        "['core', 'contacts', 'delete']"
+                                    </code>
+                                    <span>
+                                        " can control the ability to delete contacts, while "
+                                    </span>
+                                    <code class="bg-gray-100 px-2 py-1 rounded text-sm">
+                                        "['core', 'contacts', 'view']"
+                                    </code>
+                                    <span>" controls viewing access."</span>
+                                </p>
                                 <p class="text-lg">
-                                    "NEEDS REVIEW: Permissions are organized in a tree structure, with each permission's location defined by a key reducer - an array of strings that represents the path to the permission. This allows for precise targeting of permissions at any level of the tree, from broad feature access to specific actions within features. For example, a key reducer like `['core', 'contacts', 'delete']` can control the ability to delete contacts, while `['core', 'contacts', 'view']` controls viewing access."
+                                    "Sometimes layers of the permission system may not have a specified value for a particular location, so the key reducer method may not find anything there. This is expected behavior - the system gracefully handles missing permission definitions by falling back to code defaults, ensuring there's always a defined permission state."
                                 </p>
                             </div>
                             <div>
                                 <h3 class="text-2xl font-bold mb-4">"Role-Based Strategy"</h3>
+                                <p class="text-lg mb-4">
+                                    "Roles were added to the system so permissions could be defined independently from users. When there's a group of users that commonly have the same role in a company, you can add the permissions onto the role and assign roles (or multiple roles) to users."
+                                </p>
+                                <p class="text-lg mb-4">
+                                    "Roles have a hierarchy that can be changed on the permissions page to give you control over cascading. When two or more roles have the same permissions specified, we would have a conflict. The order you put the roles in on the permissions system management page allows us to know how merge conflicts should be handled."
+                                </p>
                                 <p class="text-lg">
-                                    "NEEDS REVIEW: The system is designed to prioritize role-based permissions over user-specific permissions. This approach was chosen for its maintainability and scalability. When permissions are stored in roles, adding the same permissions to a new user is as simple as assigning the role, and updating permissions for multiple users requires changing just the role definition. User-specific permissions are treated as a last resort, used only when a single user needs unique access that doesn't fit into any existing role structure."
+                                    "User-specific permissions are treated as the most specific level, used when a single user needs unique access that doesn't fit into any existing role structure. This approach was chosen for its maintainability and scalability - when permissions are stored in roles, adding the same permissions to a new user is as simple as assigning the role, and updating permissions for multiple users requires changing just the role definition."
                                 </p>
                             </div>
                             <div>
                                 <h3 class="text-2xl font-bold mb-4">"Cascading Permissions"</h3>
                                 <p class="text-lg mb-6">
-                                    "NEEDS REVIEW: The permission system implements a cascading model where permissions flow from the most general to the most specific level. This creates a clear hierarchy of permission checks that determines the final access level for any user."
+                                    "Permissions cascade through the system like a waterfall, flowing from the most general level down to the most specific. This means you can set broad permissions at the tenant level and then override them with more specific settings at the role or user level. The system automatically resolves conflicts by using the most specific permission value it finds, ensuring predictable behavior."
+                                </p>
+                                <p class="text-lg mb-6">
+                                    "The permission hierarchy consists of five distinct levels, each with its own purpose and priority. Understanding how these levels interact is key to effectively managing permissions across the platform."
                                 </p>
                                 <div class="space-y-6">
                                     <div class="rounded-xl p-6 border bg-white shadow-sm">
@@ -111,58 +152,54 @@ pub fn PermissionSystemCaseStudy() -> impl IntoView {
                                         </h4>
                                         <div class="space-y-4">
                                             <div class="flex items-start">
-                                                <div class="w-3 h-3 rounded-full mt-2 mr-3 border bg-white"></div>
+                                                <div class="w-2 h-2 rounded-full mt-2 mr-3 border bg-white flex-shrink-0"></div>
                                                 <div>
                                                     <p class="font-medium">"Tenant Access"</p>
                                                     <p class="text-sm text-gray-600">
-                                                        "NEEDS REVIEW: The master switch that can override all other permissions. If a permission is set to false here, it will be false regardless of other settings."
+                                                        "The master switch that can override all other permissions. If a permission is set to false here, it will be false regardless of other settings. Think of it as a circuit breaker on the outside of a house - if this turns off, everything downstream of it also gets shut off."
                                                     </p>
                                                 </div>
                                             </div>
                                             <div class="flex items-start">
-                                                <div class="w-3 h-3 rounded-full mt-2 mr-3 border bg-white"></div>
+                                                <div class="w-2 h-2 rounded-full mt-2 mr-3 border bg-white flex-shrink-0"></div>
                                                 <div>
                                                     <p class="font-medium">"Industry Defaults"</p>
                                                     <p class="text-sm text-gray-600">
-                                                        "NEEDS REVIEW: Industry-specific permission overrides that can modify the base permissions for particular industries."
+                                                        "Industry-specific permission overrides that can modify the base permissions for particular industries. Sometimes we work with other industries or we might in the future. This was mainly a future-proofing step that gave us code defaults for whole industry tenant access. Some features, like loan data, just are not relevant in some industries, so we can turn them off for groups of tenants without having to go into each tenant and tune industry-specific features."
                                                     </p>
                                                 </div>
                                             </div>
+                                            <div class="border-t border-gray-200 my-4"></div>
                                             <div class="flex items-start">
-                                                <div class="w-3 h-3 rounded-full mt-2 mr-3 border bg-white"></div>
-                                                <div>
-                                                    <p class="font-medium">"Role-Based Permissions"</p>
-                                                    <p class="text-sm text-gray-600">
-                                                        "NEEDS REVIEW: Permissions assigned through roles, with the Tenant Admin role having the highest priority, followed by user-defined roles in their specified order."
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="flex items-start">
-                                                <div class="w-3 h-3 rounded-full mt-2 mr-3 border bg-white"></div>
+                                                <div class="w-2 h-2 rounded-full mt-2 mr-3 border bg-white flex-shrink-0"></div>
                                                 <div>
                                                     <p class="font-medium">"User-Specific Permissions"</p>
                                                     <p class="text-sm text-gray-600">
-                                                        "NEEDS REVIEW: Individual user permissions that can override role-based permissions, used for exceptional cases where a user needs unique access."
+                                                        "Individual user permissions that can override role-based permissions, used for exceptional cases where a user needs unique access. This level allows administrators to grant specific permissions to individual users that don't fit into any existing role structure. These permissions are the most specific and take precedence over role-based permissions."
                                                     </p>
                                                 </div>
                                             </div>
                                             <div class="flex items-start">
-                                                <div class="w-3 h-3 rounded-full mt-2 mr-3 border bg-white"></div>
+                                                <div class="w-2 h-2 rounded-full mt-2 mr-3 border bg-white flex-shrink-0"></div>
+                                                <div>
+                                                    <p class="font-medium">"Role-Based Permissions"</p>
+                                                    <p class="text-sm text-gray-600">
+                                                        "Permissions assigned through roles, with the Tenant Admin role having the highest priority, followed by user-defined roles in their specified order. The system includes static roles like Tenant Admin and Everyone, plus user-defined roles that can be created to match organizational needs. When multiple roles have conflicting permissions, the order specified on the permissions management page determines which one takes precedence."
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-start">
+                                                <div class="w-2 h-2 rounded-full mt-2 mr-3 border bg-white flex-shrink-0"></div>
                                                 <div>
                                                     <p class="font-medium">"Code Defaults"</p>
                                                     <p class="text-sm text-gray-600">
-                                                        "NEEDS REVIEW: Base permissions baked into the code that serve as the default floor. These are used when no other permission level has explicitly set a value, ensuring there's always a defined permission state."
+                                                        "Base permissions baked into the code that serve as the default floor. These are used when no other permission level has explicitly set a value, ensuring there's always a defined permission state. This level acts as the final fallback in the permission hierarchy, guaranteeing that every permission check returns a definitive true or false value."
                                                     </p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="rounded-xl p-6 border bg-white shadow-sm">
-                                        <h4 class="text-xl font-bold mb-3">"How It Works"</h4>
-                                        <p class="text-lg">
-                                            "NEEDS REVIEW: When checking a permission, the system evaluates each level in sequence. If a permission is explicitly set at any level, that value is used. If not, the system continues down the hierarchy until it finds a value or reaches the end. This ensures that more specific permissions can override more general ones, while maintaining a clear and predictable permission structure."
-                                        </p>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -171,7 +208,7 @@ pub fn PermissionSystemCaseStudy() -> impl IntoView {
             </section>
 
             // Recursive Implementation
-            <section class="py-12 sm:py-20">
+            <section class="py-16 sm:py-24">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 class="text-4xl font-bold text-center mb-12">"Recursive Implementation"</h2>
                     <div class="max-w-4xl mx-auto">
@@ -214,7 +251,7 @@ pub fn PermissionSystemCaseStudy() -> impl IntoView {
             </section>
 
             // Key Features
-            <section class="py-12 sm:py-20">
+            <section class="py-16 sm:py-24">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 class="text-4xl font-bold text-center mb-12">
                         "Key Features & Capabilities"
@@ -288,7 +325,7 @@ pub fn PermissionSystemCaseStudy() -> impl IntoView {
             </section>
 
             // Development Journey
-            <section class="py-12 sm:py-20">
+            <section class="py-16 sm:py-24">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 class="text-4xl font-bold text-center mb-12">"Development Journey"</h2>
                     <div class="max-w-4xl mx-auto">
