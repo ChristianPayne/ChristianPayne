@@ -23,13 +23,13 @@ pub fn Landing() -> impl IntoView {
         TimelineItem {
             year: "Ongoing".to_string(),
             title: "Ennesults".to_string(),
-            description: "Rust/Tauri desktop app for Twitch chat interactions with real-time IRC integration.".to_string(),
+            description: "A Tauri/Rust Twitch bot that kindly insults people in chat.".to_string(),
             event_type: Event::Project,
         },
         TimelineItem {
             year: "2023".to_string(),
             title: "Permission System - Model Match".to_string(),
-            description: "Flagship scalable, role-based permission architecture to manage user access.".to_string(),
+            description: "Comprehensive permission system with cascading hierarchy, role management, and granular access control for Model Match's multi-tenant platform.".to_string(),
             event_type: Event::Project,
         },
         TimelineItem {

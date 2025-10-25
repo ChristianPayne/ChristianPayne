@@ -6,8 +6,72 @@
   <link data-trunk rel="copy-dir" href="static/images/"/>
   <link data-trunk rel="copy-dir" href="static/fonts/"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/typescript.min.js"></script>
+  <style>
+    /* Make highlight.js work with div+code structure */
+    .hljs {
+      background: transparent !important;
+      padding: 0 !important;
+    }
+    /* Ensure code blocks wrap properly */
+    code {
+      white-space: pre-wrap !important;
+      word-wrap: break-word !important;
+    }
+  </style>
 </head>
 
-<body></body>
+<body>
+  <script>
+    // Function to highlight code blocks
+    function highlightCodeBlocks() {
+      if (typeof hljs !== 'undefined') {
+        // Highlight all code blocks with language classes
+        document.querySelectorAll('code[class*="language-"]').forEach(function(block) {
+          hljs.highlightElement(block);
+        });
+      }
+    }
+    
+    // Initialize highlight.js after DOM is loaded
+    document.addEventListener('DOMContentLoaded', highlightCodeBlocks);
+    
+    // Also initialize when the page is fully loaded (for WASM apps)
+    window.addEventListener('load', highlightCodeBlocks);
+    
+    // Watch for dynamically added content (for WASM apps)
+    if (typeof MutationObserver !== 'undefined') {
+      const observer = new MutationObserver(function(mutations) {
+        let shouldHighlight = false;
+        mutations.forEach(function(mutation) {
+          if (mutation.type === 'childList') {
+            mutation.addedNodes.forEach(function(node) {
+              if (node.nodeType === 1) { // Element node
+                if (node.classList && node.classList.contains('language-typescript')) {
+                  shouldHighlight = true;
+                } else if (node.querySelector && node.querySelector('.language-typescript')) {
+                  shouldHighlight = true;
+                }
+              }
+            });
+          }
+        });
+        if (shouldHighlight) {
+          setTimeout(highlightCodeBlocks, 100); // Small delay to ensure DOM is ready
+        }
+      });
+      
+      // Start observing when DOM is ready
+      document.addEventListener('DOMContentLoaded', function() {
+        observer.observe(document.body, {
+          childList: true,
+          subtree: true
+        });
+      });
+    }
+  </script>
+</body>
 
 </html>
