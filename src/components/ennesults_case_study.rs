@@ -61,8 +61,10 @@ async fn fetch_github_data() -> Option<RepoData> {
     let user_agent = "ChristianPayne-Portfolio";
     let repo_url = "https://api.github.com/repos/ChristianPayne/ennesults-rs";
 
-    // Handle GitHub token (hardcoded for now)
-    let auth_header = Some("token <YOUR_TOKEN_HERE>".to_string());
+    // Handle GitHub token from environment variable
+    let auth_header = std::env::var("GITHUB_TOKEN")
+        .ok()
+        .map(|token| format!("token {}", token));
 
     if auth_header.is_some() {
         leptos::logging::log!("🔑 Using GitHub token for authentication");

@@ -104,6 +104,9 @@ pub fn Landing() -> impl IntoView {
                         <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
                             Full Stack / Rust Developer
                         </h2>
+                        <p class="text-xl md:text-2xl text-gray-800 font-semibold mb-4">
+                            "I build systems to create reliable software"
+                        </p>
                         <p class="text-lg md:text-xl text-gray-700 mb-4">
                             "My journey in tech started in 2016 with interactive auto show applications, and I've been a self starter ever since. These days, I'm doing full stack work on AWS at "
                             <span class="underline">"Model Match"</span> ", where I focus on "
