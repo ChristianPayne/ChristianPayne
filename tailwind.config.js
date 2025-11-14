@@ -1,23 +1,33 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
-  content: [
-    "./src/**/*.{ts,svelte,html}",
-  ],
+  content: ["./src/**/*.{html,rs}"],
   theme: {
-    colors: {
-      light: {
-        background: '#F5F5F5',
-        foreground: '#D6D6D6',
-        accent: '#B8B8B8',
-        text: '#141414',
+    extend: {
+      fontFamily: {
+        sans: ['Space Grotesk', 'Roboto', 'system-ui', 'sans-serif'],
       },
-      dark: {
-        background: '#141414',
-        foreground: '#333333',
-        accent: '#525252',
-        text: '#F5F5F5',
-      }
-    }
-  }
+      colors: {
+        'highlight': {
+          DEFAULT: "#FF5733",
+          10: "#060201",
+          20: "#23120B", 
+          30: "#3C1C12",
+          40: "#512316",
+          50: "#662A1A",
+          60: "#7C311E",
+          70: "#933822",
+          80: "#AB3F26",
+          90: "#C34629",
+          100: "#DB4D2D",
+          110: "#F45431",
+          120: "#FF6A45",
+          130: "#FF8665",
+          140: "#FF9F82",
+          150: "#FFB59F",
+          160: "#FFCABE",
+        },
+      },
+    },
+  },
+  plugins: [],
 }

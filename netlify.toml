@@ -1,8 +1,6 @@
-[functions]
-  directory = "functions"
+[toolchain]
+channel = "nightly"
 
-[[redirects]]
-force = true
-from = '/api/*'
-status = 200
-to = '/.netlify/functions/:splat'
+[build]
+command = "rustup default stable; cargo install trunk; rustup target add wasm32-unknown-unknown; trunk build --release"
+publish = "dist"
