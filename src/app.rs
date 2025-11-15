@@ -41,7 +41,12 @@ pub fn App() -> impl IntoView {
                     <LayoutHeader class="p-4 bg-white relative">
                         <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
                             <div class="flex justify-between items-center">
-                                <Link href="/">
+                                <Link
+                                    href="/"
+                                    on:click=move |_| {
+                                        set_mobile_menu_open.update(|v| *v = false)
+                                    }
+                                >
                                     <Button appearance=ButtonAppearance::Transparent>
                                         <h1 class="text-2xl">Christian Payne</h1>
                                     </Button>
@@ -51,7 +56,9 @@ pub fn App() -> impl IntoView {
                                 <Button
                                     appearance=ButtonAppearance::Transparent
                                     class="md:hidden"
-                                    on:click=move |_| set_mobile_menu_open.update(|v| *v = !*v)
+                                    on:click=move |_| {
+                                        set_mobile_menu_open.update(|value| *value = !*value)
+                                    }
                                 >
                                     <svg
                                         class="w-6 h-6"
@@ -81,44 +88,22 @@ pub fn App() -> impl IntoView {
                             }>
                                 // Navigation items
                                 <div class="flex flex-col md:flex-row gap-4 p-4 md:p-0">
-                                    <Link href="/case-studies">
-                                        <Button
-                                            appearance=ButtonAppearance::Transparent
-                                            on_click=move |_| {
-                                                set_mobile_menu_open.update(|v| *v = false)
-                                            }
-                                        >
+                                    <Link
+                                        href="/case-studies"
+                                        on:click=move |_| {
+                                            set_mobile_menu_open.update(|v| *v = false)
+                                        }
+                                    >
+                                        <Button appearance=ButtonAppearance::Transparent>
                                             "Case Studies"
                                         </Button>
                                     </Link>
                                     <a
-                                        href="https://christianpayne.substack.com"
+                                        href="https://christian-payne-dev.s3.us-west-1.amazonaws.com/public/christian_payne_resume_may_2025.pdf"
                                         target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <Button
-                                            appearance=ButtonAppearance::Transparent
-                                            class="inline-flex items-center"
-                                        >
-                                            "Latent Space"
-                                            <svg
-                                                class="ml-1 w-4 h-4"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    stroke-width="2"
-                                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                                                ></path>
-                                            </svg>
-                                        </Button>
-                                    </a>
-                                    <a
-                                        href="assets/christian_payne_resume_may_2025.pdf"
-                                        download="christian_payne_resume_may_2025.pdf"
+                                        on:click=move |_| {
+                                            set_mobile_menu_open.update(|v| *v = false)
+                                        }
                                     >
                                         <Button
                                             appearance=ButtonAppearance::Transparent

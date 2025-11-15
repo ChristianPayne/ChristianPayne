@@ -30,21 +30,6 @@ pub struct GitHubRelease {
     pub published_at: String,
 }
 
-// Struct for GitHub commits data
-#[derive(Debug, Deserialize, Serialize, Clone)]
-pub struct GitHubCommitsResponse {
-    pub total_count: u32,
-}
-
-// Combined repository stats
-#[derive(Debug, Clone, Default)]
-pub struct RepoStats {
-    pub repo: Option<GitHubRepo>,
-    pub latest_release: Option<GitHubRelease>,
-    pub total_commits: Option<u32>,
-    pub total_releases: Option<u32>,
-}
-
 // Combined data structure
 #[derive(Debug, Clone)]
 pub struct RepoData {
@@ -118,7 +103,7 @@ async fn fetch_github_data() -> Option<RepoData> {
     // Fetch latest release
     leptos::logging::log!("Fetching latest release...");
     let mut request = client
-        .get(&format!("{}/releases/latest", repo_url))
+        .get(format!("{}/releases/latest", repo_url))
         .header("User-Agent", user_agent);
 
     if let Some(ref auth) = auth_header {
@@ -159,7 +144,7 @@ async fn fetch_github_data() -> Option<RepoData> {
     // Fetch total releases count
     leptos::logging::log!("Fetching releases count...");
     let mut request = client
-        .get(&format!("{}/releases", repo_url))
+        .get(format!("{}/releases", repo_url))
         .header("User-Agent", user_agent);
 
     if let Some(ref auth) = auth_header {
@@ -308,13 +293,13 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                         <div class="space-y-6">
                             <h2 class="text-4xl font-bold mb-6">"Project Overview"</h2>
                             <p class="text-lg">
-                                "Ennesults is a sophisticated Twitch chat bot originally created for streamer Ennegineer (Enne). This Rust edition represents a complete rewrite of the original JavaScript version, focusing on performance, reliability, and user experience."
+                                "Ennesults is a Twitch chat bot originally created for streamer Ennegineer (Enne). This Rust edition is a complete rewrite of the original JavaScript version, focusing on performance, reliability, and user experience."
                             </p>
                             <p class="text-lg">
-                                "The bot features an intuitive desktop application built with Tauri, allowing Enne to manage her bot configuration, monitor chat activity, and customize insult patterns."
+                                "The bot is a desktop application built with Tauri, allowing Enne to manage her bot configuration, monitor chat activity, and customize insult patterns."
                             </p>
                             <p class="text-lg">
-                                "The bot also features updater functionality, allowing Enne to easily update the bot to the latest version without having to manually download the latest release."
+                                "The bot also has updater functionality, allowing Enne to easily update to the latest version without having to manually download from GitHub."
                             </p>
                             <div class="grid grid-cols-2 gap-6">
                                 <div class="rounded-lg p-4 border bg-white shadow-sm">
@@ -457,7 +442,7 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                             </div>
                             <h3 class="text-xl font-bold mb-3">"Desktop Application"</h3>
                             <p>
-                                "Native desktop experience with Tauri, providing low resource usage, fast performance, and the ability for streamers to host the bot locally."
+                                "Native desktop experience with Tauri, providing low resource usage, fast performance, and the ability for Enne to host the bot locally."
                             </p>
                         </div>
                         <div class="rounded-xl p-6 border transition-colors bg-white shadow-sm">
