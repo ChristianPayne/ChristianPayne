@@ -108,7 +108,10 @@ pub fn Landing() -> impl IntoView {
                             "I build systems to create reliable software"
                         </p>
                         <p class="text-lg md:text-xl text-gray-700 mb-4 md:mb-6">
-                            "My journey in tech started in 2016 with interactive auto show applications, and I've been a self starter ever since. These days, I'm doing full stack work on AWS at "
+                            "My journey in tech started in 2016 with interactive auto show applications. I taught myself to code and fell in love with the process."
+                        </p>
+                        <p class="text-lg md:text-xl text-gray-700 mb-4 md:mb-6">
+                            "These days, I'm doing full stack work on AWS at "
                             <a
                                 href="https://modelmatch.com"
                                 target="_blank"
@@ -122,11 +125,13 @@ pub fn Landing() -> impl IntoView {
                                 class="underline hover:text-highlight-100 transition-colors"
                             >
                                 "building robust systems"
-                            </Link>
-                            ", CRM features, data jobs, and developer tools that make everyone's job easier."
+                            </Link> ", CRM features, data jobs, and developer tools."
                         </p>
                         <p class="text-lg md:text-xl text-gray-700 mb-4">
-                            "I'm passionate about code quality and thoughtful architecture. Working with Rust has reinforced my belief in taking the time to solve problems the right way. Building strong foundations with type safety and performance in mind is key to long-term success."
+                            "I'm passionate about code quality and thoughtful architecture. Working with Rust has reinforced my belief in taking the time to solve problems the right way. "
+                        </p>
+                        <p class="text-lg md:text-xl text-gray-700 mb-4 md:mb-6">
+                            "Building strong foundations is the key to long-term success."
                         </p>
 
                         <div class="flex-grow"></div>
