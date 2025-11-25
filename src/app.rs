@@ -99,7 +99,7 @@ pub fn App() -> impl IntoView {
                                         </Button>
                                     </Link>
                                     <a
-                                        href="https://christian-payne-dev.s3.us-west-1.amazonaws.com/public/christian_payne_resume_may_2025.pdf"
+                                        href="https://christian-payne-dev.s3.us-west-1.amazonaws.com/public/christian_payne_resume.pdf"
                                         target="_blank"
                                         on:click=move |_| {
                                             set_mobile_menu_open.update(|v| *v = false)
