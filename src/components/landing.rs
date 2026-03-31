@@ -23,7 +23,13 @@ pub fn Landing() -> impl IntoView {
         TimelineItem {
             year: "Ongoing".to_string(),
             title: "Ennesults".to_string(),
-            description: "A Tauri/Rust Twitch bot that kindly insults people in chat.".to_string(),
+            description: "A cross-platform Rust/Tauri desktop Twitch bot with 22 releases, CI/CD, and auto-updates.".to_string(),
+            event_type: Event::Project,
+        },
+        TimelineItem {
+            year: "2024 - Present".to_string(),
+            title: "Systems & Data Engineering - Model Match".to_string(),
+            description: "Parallel ETL pipeline in Rust processing 311M+ records into 800K+ structured profiles. Built production observability TUI and reliability-aware data transfer tooling.".to_string(),
             event_type: Event::Project,
         },
         TimelineItem {
@@ -53,13 +59,13 @@ pub fn Landing() -> impl IntoView {
         TimelineItem {
             year: "2021 - Present".to_string(),
             title: "Started at Model Match".to_string(),
-            description: "AWS Developer role focusing on mortgage recruiting SaaS platform.".to_string(),
+            description: "Senior Software Engineer building systems-level tooling and product features for a mortgage recruiting SaaS platform on AWS.".to_string(),
             event_type: Event::Career,
         },
         TimelineItem {
             year: "2020-2021".to_string(),
             title: "UC Irvine Coding Bootcamp".to_string(),
-            description: "Intensive full stack development program covering React, Node, Express, MongoDB, and modern web technologies.".to_string(),
+            description: "Full stack development program covering React, Node, and modern web technologies. Graduated top two in the cohort and recruited directly into Model Match by the course instructor.".to_string(),
             event_type: Event::Education,
         },
         TimelineItem {
@@ -102,7 +108,7 @@ pub fn Landing() -> impl IntoView {
 
                     <div class="flex flex-col md:w-1/2 md:pt-8">
                         <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2 md:mb-4">
-                            Full Stack / Rust Developer
+                            "Systems & Backend Engineer"
                         </h2>
                         <p class="text-xl md:text-2xl text-gray-800 font-semibold mb-4 md:mb-6">
                             "I build systems to create reliable software"
@@ -111,7 +117,7 @@ pub fn Landing() -> impl IntoView {
                             "My journey in tech started in 2016 with interactive auto show applications. I taught myself to code and fell in love with the process."
                         </p>
                         <p class="text-lg md:text-xl text-gray-700 mb-4 md:mb-6">
-                            "These days, I'm doing full stack work on AWS at "
+                            "These days, I\u{2019}m building systems-level tooling in Rust at "
                             <a
                                 href="https://modelmatch.com"
                                 target="_blank"
@@ -119,19 +125,11 @@ pub fn Landing() -> impl IntoView {
                                 class="underline hover:text-highlight-100 transition-colors whitespace-nowrap"
                             >
                                 "Model Match"
-                            </a> ", where I focus on "
-                            <Link
-                                href="/case-studies/permission-system"
-                                class="underline hover:text-highlight-100 transition-colors"
-                            >
-                                "building robust systems"
-                            </Link> ", CRM features, data jobs, and developer tools."
-                        </p>
-                        <p class="text-lg md:text-xl text-gray-700 mb-4">
-                            "I'm passionate about code quality and thoughtful architecture. Working with Rust has reinforced my belief in taking the time to solve problems the right way. "
+                            </a>
+                            " \u{2014} parallel data pipelines processing 300M+ records, real-time observability tooling, and reliability-aware data transfer systems. All in production."
                         </p>
                         <p class="text-lg md:text-xl text-gray-700 mb-4 md:mb-6">
-                            "Building strong foundations is the key to long-term success."
+                            "Foundations first. Correctness always. Working with Rust has reinforced what I already believed \u{2014} taking the time to solve problems the right way is the only way that scales."
                         </p>
 
                         <div class="flex-grow"></div>

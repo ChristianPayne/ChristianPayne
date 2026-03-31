@@ -1,15 +1,13 @@
-## 🙋🏻‍♂️ Hey there!
-📚 __Full Stack Web Developer__ certified through [UC Irvine DCE](https://ce.uci.edu/).  
-🦀 __Rust Developer__ working on large scale ETL.  
-   
-🚀 Working with a lovely group of people over at [Model Match](https://modelmatch.com/).  
-🖨️ Certified printer fixer! 😉  
-   
-💻 Find me over at [christianpayne.dev](https://www.christianpayne.dev/)  
+# Christian Payne
 
-## 🏡 Past Work!
-I created interactive experiences for auto shows around the nation.  
-Check out the highlight reels!  
+Senior Software Engineer. Long Beach, CA.  
+A decade in production, now going all-in on Rust.  
+Foundations first. Correctness always.
 
-[Genesis Auto Show Wheelstands](http://www.arts4allmedia.com/#gen-intro)  
-[Hyundai Auto Show Wheelstands](http://www.arts4allmedia.com/#hy-intro)  
+And yes, I'll take a look at your printer.
+
+---
+
+🦀 Rust · ⚡ JS/TS · ☁️ AWS
+
+[christianpayne.dev](https://christianpayne.dev) · [LinkedIn](https://linkedin.com/in/christianpayne522)

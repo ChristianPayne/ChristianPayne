@@ -30,7 +30,7 @@ static CASE_STUDIES: [CaseStudy; 4] = [
     },
     CaseStudy {
         title: "Permission System",
-        description: "A comprehensive role-based access control system implementation, featuring granular permissions, role management, and secure authentication. This system provides flexible and scalable access control for modern applications.",
+        description: "Led the design and build of Model Match\u{2019}s core permission system from the ground up, mentoring a new hire through implementation. Role-based, multi-tiered, real-time, and integrated directly into the payment system.",
         image_path: Some("images/permissions.png"),
         slug: "permission-system",
         technologies: &["TypeScript", "DynamoDB", "AppSync"],
@@ -55,7 +55,7 @@ pub fn CaseStudies() -> impl IntoView {
                 <div class="text-center mt-8 md:mt-12">
                     <h1 class="text-5xl md:text-7xl font-bold mb-6">"Case Studies"</h1>
                     <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto text-gray-600">
-                        "Explore detailed insights into my projects, showcasing the challenges faced, solutions implemented, and results achieved."
+                        "A closer look at the systems and products I\u{2019}ve built \u{2014} the decisions, trade-offs, and engineering behind them."
                     </p>
                 </div>
 
