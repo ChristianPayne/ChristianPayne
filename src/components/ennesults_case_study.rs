@@ -237,7 +237,7 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                                     .as_ref()
                                     .and_then(|r| r.description.clone())
                                     .unwrap_or_else(|| {
-                                        "A Tauri/Rust Twitch bot that kindly insults people in chat"
+                                        "A cross-platform desktop Twitch bot built with a Rust core, SvelteKit frontend, and CI/CD with in-app auto-updates"
                                             .to_string()
                                     })
                             }}
@@ -483,7 +483,7 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                                     <div class="ml-16 rounded-lg p-6 border bg-white shadow-sm">
                                         <h3 class="text-xl font-bold mb-2">"Project Inception"</h3>
                                         <p>
-                                            "Started as a learning project to explore Rust and Tauri while improving upon the original JavaScript bot. The goal was to create a more maintainable, performant solution."
+                                            "A complete rewrite of the original JavaScript bot in Rust. The goal was a production-quality desktop application \u{2014} maintainable, performant, and shippable to a real user."
                                         </p>
                                     </div>
                                 </div>
@@ -491,19 +491,19 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                                     <div class="absolute left-6 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-4 bg-white"></div>
                                     <div class="ml-16 rounded-lg p-6 border bg-white shadow-sm">
                                         <h3 class="text-xl font-bold mb-2">
-                                            "Architecture Design"
+                                            "Type-Safe IPC Layer"
                                         </h3>
                                         <p>
-                                            "Chose Tauri for the perfect balance of web technologies and native performance. SvelteKit provided an excellent developer experience for the frontend."
+                                            "Used ts-rs to generate TypeScript types directly from Rust structs, making the Rust type system the single source of truth across the entire stack. Frontend and backend stay in sync at compile time, not runtime."
                                         </p>
                                     </div>
                                 </div>
                                 <div class="relative flex items-start">
                                     <div class="absolute left-6 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-4 bg-white"></div>
                                     <div class="ml-16 rounded-lg p-6 border bg-white shadow-sm">
-                                        <h3 class="text-xl font-bold mb-2">"IRC Integration"</h3>
+                                        <h3 class="text-xl font-bold mb-2">"Async Event Handling"</h3>
                                         <p>
-                                            "Implemented robust Twitch IRC connectivity with proper error handling, reconnection logic, and rate limiting to ensure reliable chat interaction."
+                                            "Built async Twitch IRC connectivity with proper error handling, reconnection logic, and rate limiting \u{2014} all running on Tauri\u{2019}s async runtime without blocking the UI thread."
                                         </p>
                                     </div>
                                 </div>
@@ -511,10 +511,10 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                                     <div class="absolute left-6 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-4 bg-white"></div>
                                     <div class="ml-16 rounded-lg p-6 border bg-white shadow-sm">
                                         <h3 class="text-xl font-bold mb-2">
-                                            "User Experience Focus"
+                                            "CI/CD & Auto-Updates"
                                         </h3>
                                         <p>
-                                            "Built an intuitive UI allowing streamers to configure the bot, monitor activity, and customize behavior without technical knowledge."
+                                            "GitHub Actions builds and signs releases for all platforms. Tauri\u{2019}s updater handles in-app updates \u{2014} the end user gets a one-click upgrade path without touching GitHub."
                                         </p>
                                     </div>
                                 </div>
@@ -525,7 +525,7 @@ pub fn EnnesultsCaseStudy() -> impl IntoView {
                                             "Ongoing Collaboration"
                                         </h3>
                                         <p>
-                                            "This project continues to evolve through collaboration with Enne and the streaming community. Regular feedback sessions drive new feature development, from command customization to UI improvements. The modular architecture enables rapid iteration and experimentation with new ideas."
+                                            "22 releases and counting. The project evolves through direct collaboration with the end user \u{2014} feedback drives feature work, and the modular architecture keeps iteration fast."
                                         </p>
                                     </div>
                                 </div>
